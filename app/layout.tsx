@@ -13,11 +13,28 @@ export const metadata = {
   description: 'Minimalisticka vzdelavaci platforma pro AI, ML a kvantove technologie.',
 };
 
-const navItems = [
+interface NavItem {
+  href: string;
+  label: string;
+  subItems?: { href: string; label: string }[];
+}
+
+const navItems: NavItem[] = [
   { href: '/uvod', label: 'Uvod' },
   { href: '/gen-ai', label: 'Gen AI' },
   { href: '/ml', label: 'ML' },
-  { href: '/quantum', label: 'Quantum' },
+  {
+    href: '/quantum',
+    label: 'Quantum',
+    subItems: [
+      { href: '/quantum-1', label: '1. Základní koncepty' },
+      { href: '/quantum-2', label: '2. Hardware a materiály' },
+      { href: '/quantum-3', label: '3. Senzorika a metrologie' },
+      { href: '/quantum-4', label: '4. Komunikace a bezpečnost' },
+      { href: '/quantum-5', label: '5. Výpočty a simulace' },
+      { href: '/quantum-6', label: '6. Strojové učení (QML)' },
+    ]
+  },
 ];
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
@@ -34,13 +51,27 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             </div>
             <nav className="space-y-3 text-sm">
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block rounded-md px-3 py-2 text-slate-200 transition hover:bg-slate-800 hover:text-white"
-                >
-                  {item.label}
-                </Link>
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block rounded-md px-3 py-2 text-slate-200 transition hover:bg-slate-800 hover:text-white"
+                  >
+                    {item.label}
+                  </Link>
+                  {item.subItems && (
+                    <div className="mt-1 flex flex-col space-y-1 border-l border-slate-800 ml-4 pl-3">
+                      {item.subItems.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className="block rounded-md px-2 py-1.5 text-xs text-slate-400 transition hover:bg-slate-800/50 hover:text-slate-200"
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
             <div className="mt-auto pt-10">
