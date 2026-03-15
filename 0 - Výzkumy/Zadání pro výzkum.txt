@@ -1,0 +1,13 @@
+Role a cíl: Chovej se jako špičkový produktový manažer v oblasti EdTech (vzdělávacích technologií), expert na Learning Experience Design (LXD) a technologický stratég. Mým cílem je vybudovat moderní vzdělávací webovou platformu a potřebuji tvůj hluboký výzkum a doporučení k tomu, jak by měla vypadat, jaké by měla mít funkce a jak k ní přistoupit strategicky.
+Kontext projektu:
+* Témata: Generativní AI (od základů po pokročilé agentní systémy z konce roku 2025), Strojové učení a Kvantové technologie.
+* Cílová skupina: Studenti navazujícího magisterského studia na technicky zaměřených vysokých školách. Jsou inteligentní, mají analytické myšlení, ale nejsou to nutně programátoři ani matematici.
+* Základní filozofie: Učit "big picture" a principy fungování pod kapotou. Žádné složité matematické rovnice ani psaní kódu. Cílem je konceptuální pochopení, strategický přehled a schopnost obhájit tyto znalosti u zkoušky.
+* Budoucnost: Platforma začne jako bezplatný nástroj pro studenty mých kurzů, ale výhledově (fáze 2) se má transformovat na komerční SaaS produkt s měsíčním předplatným.
+Zadání pro výzkum a analýzu: Na základě moderních trendů ve vzdělávání dospělých, psychologie učení složitých technologických konceptů a současného stavu EdTech trhu mi prosím vypracuj komplexní analýzu, která zodpoví následující:
+1. Ideální UX/UI a Formát obsahu: Jak by měla platforma vizuálně a strukturálně vypadat, aby maximalizovala pozornost a pochopení složitých témat? Jaké formáty obsahu (např. microlearning, interaktivní schémata, gamifikace) fungují pro tuto cílovou skupinu nejlépe?
+2. Klíčové funkcionality (Must-haves a Nice-to-haves): Jaké konkrétní funkce by platforma měla mít pro studenty (pro učení, fixaci znalostí a motivaci) a jaké pro mě jako tvůrce obsahu a administrátora? Navrhni i inovativní funkce, které by platformu odlišily.
+3. Role AI přímo ve výuce: Jakým způsobem dnes nejlépe integrovat AI jako součást vzdělávacího procesu (např. AI tutor, generování otázek na míru), aby to skutečně pomáhalo pochopení a nevedlo to k pasivitě studentů nebo k halucinacím?
+4. Strategie přechodu z Free na SaaS: Jaké funkce nebo obsahovou strukturu musím do platformy zahrnout už od prvního dne, abych v budoucnu mohl hladce zavést předplatné a monetizaci, aniž by to narušilo akademický základ?
+5. Rizika a slepé uličky: Jakých nejčastějších chyb se tvůrci podobných platforem dopouštějí a jak se jim mohu vyhnout?
+Formát výstupu: Prosím o strukturovaný, logicky členěný výstup, který kombinuje data/trendy s konkrétními a pragmatickými doporučeními pro můj projekt.
