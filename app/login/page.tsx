@@ -37,7 +37,7 @@ export default function LoginPage() {
                     email,
                     password,
                     options: {
-                       emailRedirectTo: `${location.origin}/auth/callback`,
+                        emailRedirectTo: `${location.origin}/auth/callback`,
                     }
                 });
                 if (error) throw error;
@@ -120,6 +120,13 @@ export default function LoginPage() {
                                     placeholder="••••••••"
                                 />
                             </div>
+                            {isLogin && (
+                                <div className="mt-2 text-right">
+                                    <Link href="/forgot-password" className="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+                                        Zapomněli jste heslo?
+                                    </Link>
+                                </div>
+                            )}
                         </div>
 
                         <div>
