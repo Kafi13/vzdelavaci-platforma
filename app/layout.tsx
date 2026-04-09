@@ -35,6 +35,7 @@ const navItems: NavItem[] = [
       { href: '/quantum-6', label: '6. Strojové učení (QML)' },
     ]
   },
+  { href: '/test', label: '🎯 Závěrečná zkouška' },
 ];
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
