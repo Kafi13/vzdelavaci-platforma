@@ -26,6 +26,13 @@ export const initialNodes: Node[] = [
     type: 'default',
   },
   {
+    id: 'quantum-practice',
+    position: { x: 550, y: 250 },
+    data: { label: '🧠 PROCVIČOVÁNÍ' },
+    type: 'default',
+    className: 'bg-emerald-50 text-emerald-700 font-bold border-emerald-200'
+  },
+  {
     id: 'quantum-1',
     position: { x: 200, y: 350 },
     data: { label: '1. Základy' },
@@ -74,6 +81,7 @@ export const initialEdges: Edge[] = [
   { id: 'e-uvod-gen-ai', source: 'uvod', target: 'gen-ai', type: 'smoothstep', animated: true },
   { id: 'e-uvod-ml', source: 'uvod', target: 'ml', type: 'smoothstep', animated: true },
   { id: 'e-ml-quantum', source: 'ml', target: 'quantum', type: 'smoothstep', animated: true },
+  { id: 'e-q-practice', source: 'quantum', target: 'quantum-practice', type: 'smoothstep', animated: true },
   { id: 'e-q-q1', source: 'quantum', target: 'quantum-1', type: 'smoothstep' },
   { id: 'e-q1-q2', source: 'quantum-1', target: 'quantum-2', type: 'smoothstep' },
   { id: 'e-q2-q3', source: 'quantum-2', target: 'quantum-3', type: 'smoothstep' },
