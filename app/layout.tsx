@@ -5,6 +5,7 @@ import SocraticTutor from '@/components/SocraticTutor';
 import SidebarNav from '@/components/SidebarNav';
 import { createClient } from '@/utils/supabase/server';
 import LogoutButton from '@/components/LogoutButton';
+import { isAdminEmail } from '@/utils/admin';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,6 +17,7 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: ReactNode }) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
+  const isAdmin = isAdminEmail(user?.email);
   return (
     <html lang="cs">
       <body className={inter.className}>
@@ -25,7 +27,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
               <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Platforma</p>
               <p className="mt-2 text-lg font-semibold tracking-wide">Studijni Portal</p>
             </div>
-            <SidebarNav />
+            <SidebarNav isAdmin={isAdmin} />
             <div className="mt-auto pt-10">
               {user ? (
                 <div className="border-t border-slate-800 pt-4">

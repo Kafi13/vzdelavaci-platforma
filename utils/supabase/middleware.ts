@@ -1,5 +1,6 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
+import { isAdminEmail } from '@/utils/admin'
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -32,6 +33,7 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser()
 
   const path = request.nextUrl.pathname;
+  const isAdminRoute = path.startsWith('/admin');
   
   // Protect all routes except auth-related pages or static assets
   const isAuthPage = path.startsWith('/login') || path.startsWith('/auth');
@@ -50,6 +52,12 @@ export async function updateSession(request: NextRequest) {
 
   // Optional: Redirect authenticated users away from the login page
   if (user && isAuthPage) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/'
+    return NextResponse.redirect(url)
+  }
+
+  if (user && isAdminRoute && !isAdminEmail(user.email)) {
     const url = request.nextUrl.clone()
     url.pathname = '/'
     return NextResponse.redirect(url)

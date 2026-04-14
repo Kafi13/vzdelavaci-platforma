@@ -30,14 +30,17 @@ const navItems: NavItem[] = [
   { href: "/test", label: "🎯 Závěrečná zkouška" },
 ];
 
-export default function SidebarNav() {
+export default function SidebarNav({ isAdmin = false }: { isAdmin?: boolean }) {
   const pathname = usePathname();
+  const items = isAdmin
+    ? [...navItems, { href: "/admin/results", label: "Administrace" }]
+    : navItems;
 
   const isQuantumSection = pathname?.startsWith("/quantum");
 
   return (
     <nav className="space-y-1 text-sm">
-      {navItems.map((item) => {
+      {items.map((item) => {
         const isActive = pathname === item.href;
         const hasActiveSub = item.subItems?.some((s) => pathname === s.href);
         const showSubs = item.subItems && (isActive || hasActiveSub || (item.href === "/quantum" && isQuantumSection));
