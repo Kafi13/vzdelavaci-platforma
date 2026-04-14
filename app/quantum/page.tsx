@@ -11,13 +11,13 @@ const chapterCards = [
   {
     href: "/quantum-2",
     kicker: "Kapitola 2",
-    title: "Hardware a materiály",
-    text: "Qubity, dekoherence, chlazení, supravodivé struktury, diamantové defekty a další platformy.",
+    title: "Kvantové materiály",
+    text: "Izotopově čistý křemík, supravodivé obvody, NV centra, topologické stavy a materiálové limity kvantového hardwaru.",
   },
   {
     href: "/quantum-3",
     kicker: "Kapitola 3",
-    title: "Senzorika a metrologie",
+    title: "Kvantová senzorika a metrologie",
     text: "Atomové hodiny, gravimetrie, kvantové magnetometry a přesná měření na hraně fyzikálních limitů.",
   },
   {
@@ -29,8 +29,8 @@ const chapterCards = [
   {
     href: "/quantum-5",
     kicker: "Kapitola 5",
-    title: "Výpočty a simulace",
-    text: "Kvantové obvody, simulace molekul, optimalizace a reálné limity dnešních zařízení.",
+    title: "Kvantové výpočty a simulace",
+    text: "Qubity, interference, kvantové obvody, simulace molekul, Grover, Shor a reálné limity NISQ systémů.",
   },
   {
     href: "/quantum-6",

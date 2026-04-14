@@ -42,7 +42,7 @@ export const initialNodes: Node[] = [
   {
     id: 'quantum-2',
     position: { x: 300, y: 450 },
-    data: { label: '2. Počítače' },
+    data: { label: '2. Materiály' },
     type: 'default',
   },
   {
@@ -60,7 +60,7 @@ export const initialNodes: Node[] = [
   {
     id: 'quantum-5',
     position: { x: 600, y: 350 },
-    data: { label: '5. Materiály' },
+    data: { label: '5. Výpočty' },
     type: 'default',
   },
   {
