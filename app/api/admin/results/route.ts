@@ -4,6 +4,10 @@ import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { createClient } from '@/utils/supabase/server';
 import { isAdminEmail } from '@/utils/admin';
 
+function isMissingTableError(message?: string) {
+  return message?.includes('Could not find the table') ?? false;
+}
+
 export async function GET() {
   const supabase = await createClient();
   const {
@@ -29,36 +33,43 @@ export async function GET() {
   );
 
   // 1. Získání všech profilů
-  const { data: profiles, error: profError } = await adminSupabase
+  const { data: profilesData, error: profError } = await adminSupabase
     .from('profiles')
     .select('*');
 
-  if (profError) return NextResponse.json({ error: profError.message }, { status: 500 });
+  if (profError && !isMissingTableError(profError.message)) {
+    return NextResponse.json({ error: profError.message }, { status: 500 });
+  }
 
   // 2. Získání všech výsledků
-  const { data: results, error: resError } = await adminSupabase
+  const { data: resultsData, error: resError } = await adminSupabase
     .from('exam_results')
     .select('*')
     .order('score', { ascending: false });
 
-  if (resError) return NextResponse.json({ error: resError.message }, { status: 500 });
+  if (resError && !isMissingTableError(resError.message)) {
+    return NextResponse.json({ error: resError.message }, { status: 500 });
+  }
 
   // 3. Získání emailů z auth.users (toto lze jen přes service role)
   const { data: { users }, error: authError } = await adminSupabase.auth.admin.listUsers();
 
   if (authError) return NextResponse.json({ error: authError.message }, { status: 500 });
 
+  const profiles = profilesData ?? [];
+  const results = resultsData ?? [];
+
   // 4. Propojení dat
-  const combinedData = profiles.map(p => {
-    const userAuth = users.find(u => u.id === p.id);
-    const userResults = results.filter(r => r.user_id === p.id);
+  const combinedData = users.map((userAuth) => {
+    const profile = profiles.find((p) => p.id === userAuth.id);
+    const userResults = results.filter((r) => r.user_id === userAuth.id);
     const bestResult = userResults.length > 0 ? userResults[0] : null;
 
     return {
-      id: p.id,
+      id: userAuth.id,
       email: userAuth?.email || 'Neznámý',
-      full_name: p.full_name || 'Nevyplněno',
-      semester_project: p.semester_project_desc || 'Zatím nezadáno',
+      full_name: profile?.full_name || 'Nevyplněno',
+      semester_project: profile?.semester_project_desc || 'Zatím nezadáno',
       best_score: bestResult ? Math.round((bestResult.score / bestResult.total_questions) * 100) : 0,
       attempts: userResults.length,
       last_attempt: bestResult ? bestResult.created_at : null
