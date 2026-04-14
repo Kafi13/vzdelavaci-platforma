@@ -22,7 +22,7 @@ export const initialNodes: Node[] = [
   {
     id: 'quantum',
     position: { x: 400, y: 250 },
-    data: { label: 'VZDĚLÁVACÍ SEKCE' },
+    data: { label: 'QUANTUM' },
     type: 'default',
     className: 'bg-slate-900 text-white font-bold border-none shadow-lg'
   },
