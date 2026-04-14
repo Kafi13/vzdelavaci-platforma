@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import EditableContent from '@/components/editable-content';
-import KnowledgeCardsSection from '@/components/KnowledgeCardsSection';
 import { supabase } from '@/utils/supabase';
-import { KnowledgeCardType } from '@/types';
 import { ArrowRight } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -18,7 +16,7 @@ const nextSection: Record<string, { href: string; label: string }> = {
   'quantum-3': { href: '/quantum-4', label: '4. Komunikace a bezpečnost' },
   'quantum-4': { href: '/quantum-5', label: '5. Výpočty a simulace' },
   'quantum-5': { href: '/quantum-6', label: '6. Strojové učení (QML)' },
-  'quantum-6': { href: '/test', label: 'Závěrečná zkouška' },
+  'quantum-6': { href: '/quantum-practice', label: 'Procvičování všech otázek' },
 };
 
 export default async function Page({ params }: PageProps) {
@@ -34,13 +32,6 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
-  const { data: cardsData } = await supabase
-    .from('knowledge_cards')
-    .select('*')
-    .eq('page_slug', slug)
-    .order('order_index');
-
-  const cards: KnowledgeCardType[] = cardsData || [];
   const next = nextSection[slug];
 
   return (
@@ -53,10 +44,6 @@ export default async function Page({ params }: PageProps) {
       </header>
 
       <EditableContent slug={slug} initialContent={pageData.content ?? ''} />
-
-      {cards.length > 0 && (
-        <KnowledgeCardsSection cards={cards} />
-      )}
 
       {/* Next section navigation */}
       {next && (

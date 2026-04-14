@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { KnowledgeCardType } from "@/types";
-import { Check, X, Loader2, Trophy, ArrowRight, RefreshCw, CheckCircle2, XCircle } from "lucide-react";
+import { Loader2, Trophy, ArrowRight, RefreshCw, CheckCircle2, XCircle } from "lucide-react";
 import Link from "next/link";
 import { isMissingTableError, readExamResults } from "@/utils/user-metadata";
 
@@ -26,14 +26,14 @@ export default function ExamPage() {
     const { data, error } = await supabase
       .from("knowledge_cards")
       .select("*")
-      .eq("page_slug", "quantum_exam")
+      .like("page_slug", "quantum-%")
       .not("checkpoint_question", "is", null);
 
     if (data && data.length > 0) {
       const shuffled = [...data].sort(() => 0.5 - Math.random());
       setQuestions(shuffled.slice(0, 15));
     } else {
-      console.error("No exam questions found!");
+      console.error("No exam questions found!", error);
     }
     setLoading(false);
   };
@@ -103,7 +103,7 @@ export default function ExamPage() {
         <div className="space-y-3">
           <h1 className="text-3xl font-bold text-slate-900">Kvantová zkouška</h1>
           <p className="text-slate-600 text-lg">
-            Prověřte své znalosti z kvantových technologií. Čeká vás náhodný výběr 15 otázek.
+            Prověřte své znalosti z kvantových technologií. Test vybírá 15 náhodných otázek ze stejného fondu jako procvičování.
           </p>
         </div>
         <button

@@ -22,8 +22,9 @@ export const initialNodes: Node[] = [
   {
     id: 'quantum',
     position: { x: 400, y: 250 },
-    data: { label: 'Kvantové technologie' },
+    data: { label: 'VZDĚLÁVACÍ SEKCE' },
     type: 'default',
+    className: 'bg-slate-900 text-white font-bold border-none shadow-lg'
   },
   {
     id: 'quantum-practice',
@@ -71,7 +72,7 @@ export const initialNodes: Node[] = [
   {
     id: 'test',
     position: { x: 450, y: 550 },
-    data: { label: 'ZÁVĚREČNÝ TEST' },
+    data: { label: 'ZÁVĚREČNÁ ZKOUŠKA' },
     type: 'default',
     className: 'bg-indigo-600 text-white font-bold border-none shadow-lg'
   },
@@ -88,5 +89,5 @@ export const initialEdges: Edge[] = [
   { id: 'e-q3-q4', source: 'quantum-3', target: 'quantum-4', type: 'smoothstep' },
   { id: 'e-q4-q5', source: 'quantum-4', target: 'quantum-5', type: 'smoothstep' },
   { id: 'e-q5-q6', source: 'quantum-5', target: 'quantum-6', type: 'smoothstep' },
-  { id: 'e-q6-test', source: 'quantum-6', target: 'test', type: 'smoothstep', animated: true },
+  { id: 'e-practice-test', source: 'quantum-practice', target: 'test', type: 'smoothstep', animated: true },
 ];

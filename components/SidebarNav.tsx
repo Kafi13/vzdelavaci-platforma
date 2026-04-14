@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
   { href: "/ml", label: "ML" },
   {
     href: "/quantum",
-    label: "Quantum",
+    label: "Vzdělávací sekce",
     subItems: [
       { href: "/quantum-1", label: "1. Základní koncepty" },
       { href: "/quantum-2", label: "2. Hardware a materiály" },
@@ -26,7 +26,7 @@ const navItems: NavItem[] = [
       { href: "/quantum-6", label: "6. Strojové učení (QML)" },
     ],
   },
-  { href: "/quantum-practice", label: "🧠 Procvičování (všechny otázky)" },
+  { href: "/quantum-practice", label: "🧠 Procvičování" },
   { href: "/test", label: "🎯 Závěrečná zkouška" },
 ];
 
