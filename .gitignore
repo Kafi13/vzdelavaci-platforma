@@ -36,3 +36,7 @@ node_modules
 
 # Local Netlify folder
 .netlify
+
+# Cloudflare
+.open-next
+.wrangler

@@ -1,13 +1,10 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import SocraticTutor from '@/components/SocraticTutor';
 import SidebarNav from '@/components/SidebarNav';
 import { createClient } from '@/utils/supabase/server';
 import LogoutButton from '@/components/LogoutButton';
 import { isAdminEmail } from '@/utils/admin';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Vzdělávací platforma',
@@ -20,7 +17,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const isAdmin = isAdminEmail(user?.email);
   return (
     <html lang="cs">
-      <body className={inter.className}>
+      <body className="font-sans">
         <div className="min-h-screen bg-paper text-ink">
           <aside className="fixed inset-y-0 left-0 w-64 border-r border-slate-800 bg-slate-950 px-6 py-8 text-slate-100">
             <div className="mb-10">
