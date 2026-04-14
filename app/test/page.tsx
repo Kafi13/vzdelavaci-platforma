@@ -1,10 +1,12 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { KnowledgeCardType } from "@/types";
-import { Check, X, Loader2, Trophy, ArrowRight, RefreshCw } from "lucide-react";
+import { Check, X, Loader2, Trophy, ArrowRight, RefreshCw, CheckCircle2, XCircle } from "lucide-react";
 import Link from "next/link";
+import { isMissingTableError, readExamResults } from "@/utils/user-metadata";
 
 export default function ExamPage() {
   const [loading, setLoading] = useState(true);
@@ -21,18 +23,43 @@ export default function ExamPage() {
 
   const fetchQuestions = async () => {
     setLoading(true);
-    // Fetch all cards that have questions
     const { data, error } = await supabase
       .from("knowledge_cards")
       .select("*")
+      .eq("page_slug", "quantum_exam")
       .not("checkpoint_question", "is", null);
 
-    if (data) {
-      // Shuffle and take up to 15
+    if (data && data.length > 0) {
       const shuffled = [...data].sort(() => 0.5 - Math.random());
       setQuestions(shuffled.slice(0, 15));
+    } else {
+      console.error("No exam questions found!");
     }
     setLoading(false);
+  };
+
+  const saveResult = async (score: number, total: number) => {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return;
+
+    const resultPayload = {
+      user_id: user.id,
+      score: score,
+      total_questions: total,
+      created_at: new Date().toISOString(),
+    };
+
+    const { error } = await supabase.from("exam_results").insert(resultPayload);
+
+    if (error && isMissingTableError(error.message)) {
+      const existingResults = readExamResults(user);
+      await supabase.auth.updateUser({
+        data: {
+          ...user.user_metadata,
+          exam_results: [resultPayload, ...existingResults],
+        },
+      });
+    }
   };
 
   const handleStart = () => {
@@ -42,6 +69,7 @@ export default function ExamPage() {
   };
 
   const handleAnswer = (option: string) => {
+    if (answers[currentIdx] !== undefined) return; // Prevent re-answering
     setAnswers({ ...answers, [currentIdx]: option });
   };
 
@@ -49,6 +77,10 @@ export default function ExamPage() {
     if (currentIdx < questions.length - 1) {
       setCurrentIdx(currentIdx + 1);
     } else {
+      const correctCount = questions.reduce((acc, q, idx) => {
+        return answers[idx] === q.correct_answer ? acc + 1 : acc;
+      }, 0);
+      saveResult(correctCount, questions.length);
       setShowResult(true);
     }
   };
@@ -62,7 +94,6 @@ export default function ExamPage() {
     );
   }
 
-  // START SCREEN
   if (currentIdx === -1) {
     return (
       <div className="max-w-2xl mx-auto text-center space-y-8 py-12">
@@ -70,39 +101,21 @@ export default function ExamPage() {
           <Trophy className="w-10 h-10" />
         </div>
         <div className="space-y-3">
-          <h1 className="text-3xl font-bold text-slate-900">Závěrečná zkouška</h1>
+          <h1 className="text-3xl font-bold text-slate-900">Kvantová zkouška</h1>
           <p className="text-slate-600 text-lg">
-            Prověřte své znalosti z absolvovaných lekcí. Čeká vás náhodný výběr až 15 otázek.
+            Prověřte své znalosti z kvantových technologií. Čeká vás náhodný výběr 15 otázek.
           </p>
-        </div>
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-left space-y-4">
-          <h3 className="font-semibold text-slate-900">Pravidla testu:</h3>
-          <ul className="space-y-2 text-slate-600 text-sm">
-            <li className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-              Náhodný výběr z databáze znalostí.
-            </li>
-            <li className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-              Na každou otázku je pouze jedna správná odpověď.
-            </li>
-            <li className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-              Po dokončení uvidíte své celkové skóre.
-            </li>
-          </ul>
         </div>
         <button
           onClick={handleStart}
           className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg shadow-indigo-200 active:scale-95"
         >
-          Spustit zkoušku
+          Spustit test
         </button>
       </div>
     );
   }
 
-  // RESULT SCREEN
   if (showResult) {
     const correctCount = questions.reduce((acc, q, idx) => {
       return answers[idx] === q.correct_answer ? acc + 1 : acc;
@@ -118,89 +131,71 @@ export default function ExamPage() {
             Správně jste odpověděli na <span className="font-bold text-slate-900">{correctCount}</span> z <span className="font-bold text-slate-900">{questions.length}</span> otázek.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 gap-4 text-left">
-           {questions.map((q, idx) => (
-             <div key={idx} className={`p-4 rounded-lg border ${answers[idx] === q.correct_answer ? 'bg-emerald-50 border-emerald-100' : 'bg-rose-50 border-rose-100'}`}>
-                <p className="font-semibold text-slate-800 text-sm mb-1">{idx + 1}. {q.checkpoint_question}</p>
-                <p className="text-xs text-slate-600">Vaše odpověď: <span className={answers[idx] === q.correct_answer ? 'text-emerald-700' : 'text-rose-700'}>{answers[idx]}</span></p>
-                {answers[idx] !== q.correct_answer && (
-                  <p className="text-xs text-emerald-700 font-medium">Správně: {q.correct_answer}</p>
-                )}
-             </div>
-           ))}
-        </div>
-
         <div className="flex gap-4 justify-center">
-          <button
-            onClick={handleStart}
-            className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-bold transition-all"
-          >
-            <RefreshCw className="w-4 h-4" /> Zkusit znovu
-          </button>
-          <Link
-            href="/"
-            className="flex items-center gap-2 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 px-6 py-3 rounded-xl font-bold transition-all"
-          >
-            Zpět na mapu
-          </Link>
+          <button onClick={handleStart} className="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold"><RefreshCw size={18}/>Zkusit znovu</button>
+          <Link href="/dashboard" className="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-xl font-bold">Zpět na profil</Link>
         </div>
       </div>
     );
   }
 
-  // QUESTION SCREEN
   const q = questions[currentIdx];
-  const hasAnswered = answers[currentIdx] !== undefined;
+  const userAnswer = answers[currentIdx];
+  const isAnswered = userAnswer !== undefined;
+  const isCorrect = userAnswer === q.correct_answer;
 
   return (
-    <div className="max-w-2xl mx-auto space-y-8 py-8">
-      <div className="flex items-center justify-between text-sm font-medium text-slate-500">
-        <span>Otázka {currentIdx + 1} z {questions.length}</span>
+    <div className="max-w-2xl mx-auto space-y-8 py-8 px-4">
+      <div className="flex items-center justify-between text-sm font-bold text-slate-400 uppercase tracking-widest">
+        <span>Otázka {currentIdx + 1} / {questions.length}</span>
         <div className="w-32 h-2 bg-slate-100 rounded-full overflow-hidden">
-          <div 
-            className="h-full bg-indigo-500 transition-all duration-300" 
-            style={{ width: `${((currentIdx + 1) / questions.length) * 100}%` }}
-          />
+          <div className="h-full bg-indigo-500 transition-all duration-300" style={{ width: `${((currentIdx + 1) / questions.length) * 100}%` }} />
         </div>
       </div>
 
       <div className="space-y-6">
-        <h2 className="text-2xl font-bold text-slate-900">{q.checkpoint_question}</h2>
+        <h2 className="text-2xl font-bold text-slate-900 leading-tight">{q.checkpoint_question}</h2>
         
         <div className="space-y-3">
-          {q.checkpoint_options.map((opt, idx) => (
-            <button
-              key={idx}
-              onClick={() => handleAnswer(opt)}
-              disabled={hasAnswered}
-              className={`w-full text-left px-6 py-5 rounded-xl border-2 transition-all flex items-center justify-between group
-                ${answers[currentIdx] === opt 
-                  ? 'border-indigo-600 bg-indigo-50/30' 
-                  : 'border-slate-100 hover:border-slate-300 bg-white'
-                }
-                ${hasAnswered && opt === q.correct_answer && opt !== answers[currentIdx] ? 'border-emerald-500/50 bg-emerald-50/20' : ''}
-              `}
-            >
-              <span className={`font-medium ${answers[currentIdx] === opt ? 'text-indigo-900' : 'text-slate-700'}`}>
-                {opt}
-              </span>
-              {answers[currentIdx] === opt && <div className="w-2 h-2 rounded-full bg-indigo-600" />}
-            </button>
-          ))}
+          {q.checkpoint_options.map((opt, idx) => {
+            const isSelected = userAnswer === opt;
+            const isOptionCorrect = opt === q.correct_answer;
+            
+            let btnClass = "border-slate-100 bg-white hover:border-slate-300";
+            if (isAnswered) {
+              if (isOptionCorrect) btnClass = "border-emerald-500 bg-emerald-50 text-emerald-900 ring-1 ring-emerald-500";
+              else if (isSelected) btnClass = "border-rose-500 bg-rose-50 text-rose-900 ring-1 ring-rose-500";
+              else btnClass = "border-slate-100 bg-white opacity-50";
+            }
+
+            return (
+              <button
+                key={idx}
+                onClick={() => handleAnswer(opt)}
+                disabled={isAnswered}
+                className={`w-full text-left px-6 py-5 rounded-2xl border-2 transition-all flex items-center justify-between group ${btnClass}`}
+              >
+                <span className="font-semibold">{opt}</span>
+                {isAnswered && isOptionCorrect && <CheckCircle2 className="w-5 h-5 text-emerald-600" />}
+                {isAnswered && isSelected && !isOptionCorrect && <XCircle className="w-5 h-5 text-rose-600" />}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      <div className="flex justify-end">
+      {isAnswered && (
+        <div className={`p-4 rounded-2xl flex items-center gap-3 animate-in fade-in slide-in-from-bottom-2 ${isCorrect ? 'bg-emerald-50 text-emerald-800' : 'bg-rose-50 text-rose-800'}`}>
+          {isCorrect ? <CheckCircle2 className="w-5 h-5" /> : <XCircle className="w-5 h-5" />}
+          <span className="font-bold">{isCorrect ? "Správná odpověď!" : `Špatně. Správná odpověď je: ${q.correct_answer}`}</span>
+        </div>
+      )}
+
+      <div className="flex justify-end pt-4">
         <button
           onClick={nextQuestion}
-          disabled={!hasAnswered}
-          className={`flex items-center gap-2 px-8 py-4 rounded-xl font-bold transition-all
-            ${hasAnswered 
-              ? 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-100' 
-              : 'bg-slate-100 text-slate-400 cursor-not-allowed'
-            }
-          `}
+          disabled={!isAnswered}
+          className={`flex items-center gap-2 px-10 py-4 rounded-2xl font-black transition-all ${isAnswered ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-200' : 'bg-slate-100 text-slate-300 cursor-not-allowed'}`}
         >
           {currentIdx === questions.length - 1 ? 'Dokončit test' : 'Další otázka'}
           <ArrowRight className="w-5 h-5" />

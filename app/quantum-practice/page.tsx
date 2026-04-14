@@ -17,13 +17,25 @@ import {
   SearchX
 } from "lucide-react";
 
-// Jednoduchý SRS systém ukládaný do localStorage
 type QuestionProgress = {
-  score: number; // Vyšší skóre = méně časté zobrazování
-  lastSeen: number; // Timestamp
+  score: number;
+  lastSeen: number;
 };
 
 type ProgressMap = Record<string, QuestionProgress>;
+type PracticeStats = {
+  date: string;
+  answeredToday: number;
+};
+
+const EMPTY_STATS: PracticeStats = {
+  date: "",
+  answeredToday: 0,
+};
+
+function getTodayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
 
 export default function QuantumPracticePage() {
   const [loading, setLoading] = useState(true);
@@ -36,67 +48,71 @@ export default function QuantumPracticePage() {
 
   // States pro procvičování (Practice)
   const [progress, setProgress] = useState<ProgressMap>({});
+  const [practiceStats, setPracticeStats] = useState<PracticeStats>(EMPTY_STATS);
   const [currentQuestion, setCurrentQuestion] = useState<KnowledgeCardType | null>(null);
   const [userAnswer, setUserAnswer] = useState<string | null>(null);
-  const [answeredCount, setAnsweredCount] = useState(0);
+  const [user, setUser] = useState<any>(null);
 
   const supabase = createClient();
 
   useEffect(() => {
     fetchData();
-    // Načtení pokroku z localStorage
-    const savedProgress = localStorage.getItem("quantum_practice_progress");
-    if (savedProgress) {
-      try {
-        setProgress(JSON.parse(savedProgress));
-      } catch (e) {
-        console.error("Chyba při načítání pokroku:", e);
-      }
-    }
   }, []);
 
   const fetchData = async () => {
     setLoading(true);
-    // Načteme všechny kvantové otázky (lekce i zkouškové)
-    const { data, error } = await supabase
+    const [
+      { data: authData },
+      { data, error },
+    ] = await Promise.all([
+      supabase.auth.getUser(),
+      supabase
       .from("knowledge_cards")
       .select("*")
       .like("page_slug", "quantum%")
-      .not("checkpoint_question", "is", null);
+      .not("checkpoint_question", "is", null),
+    ]);
+
+    const authUser = authData.user;
+    setUser(authUser ?? null);
+
+    const savedProgress = (authUser?.user_metadata?.quantum_practice_progress ?? {}) as ProgressMap;
+    const savedStats = (authUser?.user_metadata?.quantum_practice_stats ?? EMPTY_STATS) as PracticeStats;
+
+    setProgress(savedProgress);
+    setPracticeStats(savedStats.date === getTodayKey() ? savedStats : EMPTY_STATS);
 
     if (data) {
       setQuestions(data);
-      selectNextQuestion(data);
+      selectNextQuestion(data, savedProgress);
     }
+
+    if (error) {
+      console.error("Chyba při načítání kvantových otázek:", error);
+    }
+
     setLoading(false);
   };
 
   // --- LOGIKA SRS (PROCVIČOVÁNÍ) ---
 
-  const selectNextQuestion = (allQuestions: KnowledgeCardType[] = questions) => {
+  const selectNextQuestion = (
+    allQuestions: KnowledgeCardType[] = questions,
+    currentProgress: ProgressMap = progress
+  ) => {
     if (allQuestions.length === 0) return;
 
-    // Načteme aktuální progress (z state, protože se mohl změnit)
-    const currentProgress = JSON.parse(localStorage.getItem("quantum_practice_progress") || "{}");
-
-    // Algoritmus výběru:
-    // 1. Vyřadíme otázku, kterou jsme právě zodpověděli (pokud je jich víc než jedna)
-    // 2. Najdeme otázky s nejnižším skóre
-    // 3. Náhodně vybereme jednu z nich
-    
     let candidates = [...allQuestions];
     if (currentQuestion && allQuestions.length > 1) {
       candidates = candidates.filter(q => q.id !== currentQuestion.id);
     }
 
-    // Seřadíme podle skóre (vzestupně) a pak náhodně zamícháme ty se stejným skóre
     const sorted = candidates.sort((a, b) => {
       const scoreA = currentProgress[a.id]?.score || 0;
       const scoreB = currentProgress[b.id]?.score || 0;
       return scoreA - scoreB;
     });
 
-    // Vezmeme top 5 kandidátů (otázky, které student umí nejméně) a z nich vybereme náhodně
     const topCandidates = sorted.slice(0, Math.min(5, sorted.length));
     const selected = topCandidates[Math.floor(Math.random() * topCandidates.length)];
     
@@ -104,13 +120,33 @@ export default function QuantumPracticePage() {
     setUserAnswer(null);
   };
 
-  const handleAnswer = (option: string) => {
-    if (!currentQuestion || userAnswer) return;
+  const syncPracticeState = async (newProgress: ProgressMap, newStats: PracticeStats) => {
+    if (!user) return;
+
+    const { data, error } = await supabase.auth.updateUser({
+      data: {
+        ...user.user_metadata,
+        quantum_practice_progress: newProgress,
+        quantum_practice_stats: newStats,
+      },
+    });
+
+    if (error) {
+      console.error("Chyba při ukládání procvičování do Supabase:", error);
+      return;
+    }
+
+    if (data.user) {
+      setUser(data.user);
+    }
+  };
+
+  const handleAnswer = async (option: string) => {
+    if (!currentQuestion || userAnswer || !user) return;
     
     setUserAnswer(option);
     const isCorrect = option === currentQuestion.correct_answer;
     
-    // Aktualizace pokroku
     const currentProg = progress[currentQuestion.id] || { score: 0, lastSeen: 0 };
     const newScore = isCorrect ? currentProg.score + 1 : Math.max(0, currentProg.score - 1);
     
@@ -122,9 +158,15 @@ export default function QuantumPracticePage() {
       }
     };
 
+    const today = getTodayKey();
+    const newStats: PracticeStats = {
+      date: today,
+      answeredToday: practiceStats.date === today ? practiceStats.answeredToday + 1 : 1,
+    };
+
     setProgress(newProgress);
-    localStorage.setItem("quantum_practice_progress", JSON.stringify(newProgress));
-    setAnsweredCount(prev => prev + 1);
+    setPracticeStats(newStats);
+    await syncPracticeState(newProgress, newStats);
   };
 
   // --- LOGIKA PROHLÍŽEČE (BROWSE) ---
@@ -147,10 +189,11 @@ export default function QuantumPracticePage() {
 
   const resetProgress = () => {
     if (confirm("Opravdu chcete smazat veškerý svůj postup v procvičování?")) {
-      localStorage.removeItem("quantum_practice_progress");
+      const resetStats = { ...EMPTY_STATS };
       setProgress({});
-      setAnsweredCount(0);
-      selectNextQuestion();
+      setPracticeStats(resetStats);
+      void syncPracticeState({}, resetStats);
+      selectNextQuestion(questions, {});
     }
   };
 
@@ -267,7 +310,7 @@ export default function QuantumPracticePage() {
 
           <div className="flex items-center justify-between px-2">
             <div className="text-sm font-bold text-slate-400">
-              Dnes procvičeno: <span className="text-slate-900">{answeredCount}</span>
+              Dnes procvičeno: <span className="text-slate-900">{practiceStats.answeredToday}</span>
             </div>
             <button 
               onClick={resetProgress}

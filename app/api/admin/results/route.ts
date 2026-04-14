@@ -3,10 +3,7 @@ import { NextResponse } from 'next/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { createClient } from '@/utils/supabase/server';
 import { isAdminEmail } from '@/utils/admin';
-
-function isMissingTableError(message?: string) {
-  return message?.includes('Could not find the table') ?? false;
-}
+import { isMissingTableError, readExamResults, readStudentProfile } from '@/utils/user-metadata';
 
 export async function GET() {
   const supabase = await createClient();
@@ -61,9 +58,16 @@ export async function GET() {
 
   // 4. Propojení dat
   const combinedData = users.map((userAuth) => {
-    const profile = profiles.find((p) => p.id === userAuth.id);
-    const userResults = results.filter((r) => r.user_id === userAuth.id);
-    const bestResult = userResults.length > 0 ? userResults[0] : null;
+    const profile = profiles.find((p) => p.id === userAuth.id) ?? readStudentProfile(userAuth);
+    const tableResults = results.filter((r) => r.user_id === userAuth.id);
+    const userResults = tableResults.length > 0 ? tableResults : readExamResults(userAuth);
+    const bestResult = userResults.reduce((best, current) => {
+      if (!best) return current;
+
+      const bestPercent = best.total_questions > 0 ? best.score / best.total_questions : 0;
+      const currentPercent = current.total_questions > 0 ? current.score / current.total_questions : 0;
+      return currentPercent > bestPercent ? current : best;
+    }, null as (typeof userResults)[number] | null);
 
     return {
       id: userAuth.id,
