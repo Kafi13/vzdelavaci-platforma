@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/utils/supabase';
+import { getSupabaseClient } from '@/utils/supabase';
 
 type EditableContentProps = {
   slug: string;
@@ -69,6 +69,7 @@ export default function EditableContent({ slug, initialContent }: EditableConten
   const handleSave = async () => {
     setSaving(true);
     setError(null);
+    const supabase = getSupabaseClient();
 
     const { error: updateError } = await supabase
       .from('pages')

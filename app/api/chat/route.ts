@@ -1,17 +1,26 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { supabase } from "@/utils/supabase";
-
-const apiKey = process.env.GEMINI_API_KEY;
-
-if (!apiKey) {
-    throw new Error("Missing GEMINI_API_KEY environment variable");
-}
-
-const genAI = new GoogleGenerativeAI(apiKey);
+import { getSupabaseClient } from "@/utils/supabase";
 const baseSystemInstruction = `Jsi Sokratovský AI tutor. Tvojí rolí je pomáhat studentům pochopit probíranou látku. NIKDY nedávej přímou odpověď nebo nepiš kód za studenta. Místo toho pokládej návodné otázky a logicky veď studenta k tomu, aby na řešení přišel sám. Buď přátelský, trpělivý a vždy komunikuj v českém jazyce.`;
+
+type KnowledgeCard = {
+    title?: string | null;
+    [key: string]: unknown;
+};
+
+function getGeminiClient() {
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
+        throw new Error("Missing GEMINI_API_KEY environment variable");
+    }
+
+    return new GoogleGenerativeAI(apiKey);
+}
 
 export async function POST(req: Request) {
     try {
+        const supabase = getSupabaseClient();
+        const genAI = getGeminiClient();
         const { messages, pathname } = await req.json();
 
         if (!messages || !Array.isArray(messages) || messages.length === 0) {
@@ -42,7 +51,7 @@ export async function POST(req: Request) {
                 }
 
                 if (data && data.length > 0) {
-                    const card = data[0];
+                    const card = data[0] as KnowledgeCard;
                     pageContext = `
 Zde jsou informace o aktuální stránce ("${card.title || 'Neznámý název'}"), kterou student právě studuje.
 Tato data obsahují kontext probírané látky a také znění kontrolních kvízů na stránce.

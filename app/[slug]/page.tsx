@@ -1,13 +1,18 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import EditableContent from '@/components/editable-content';
-import { supabase } from '@/utils/supabase';
+import { getSupabaseClient } from '@/utils/supabase';
 import { ArrowRight } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
 type PageProps = {
   params: Promise<{ slug: string }>;
+};
+
+type LessonPage = {
+  title: string;
+  content: string | null;
 };
 
 const nextSection: Record<string, { href: string; label: string }> = {
@@ -21,6 +26,7 @@ const nextSection: Record<string, { href: string; label: string }> = {
 
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
+  const supabase = getSupabaseClient();
 
   const { data: pageData, error: pageError } = await supabase
     .from('pages')
@@ -32,6 +38,8 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
+  const page = pageData as LessonPage;
+
   const next = nextSection[slug];
 
   return (
@@ -39,11 +47,11 @@ export default async function Page({ params }: PageProps) {
       <header className="space-y-3">
         <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Sekce</p>
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
-          {pageData.title}
+          {page.title}
         </h1>
       </header>
 
-      <EditableContent slug={slug} initialContent={pageData.content ?? ''} />
+      <EditableContent slug={slug} initialContent={page.content ?? ''} />
 
       {/* Next section navigation */}
       {next && (
