@@ -241,10 +241,6 @@ export default function QuantumPracticePage() {
               </div>
 
               <div className="space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold uppercase tracking-wider mb-2">
-                  {currentQuestion.page_slug.includes('exam') ? 'Zkoušková otázka' : 'Kontrolní otázka z lekce'}
-                </div>
-                
                 <h2 className="text-2xl font-bold text-slate-900 leading-tight">
                   {currentQuestion.checkpoint_question}
                 </h2>
@@ -342,12 +338,6 @@ export default function QuantumPracticePage() {
                     className="w-full text-left p-5 flex items-start justify-between gap-4"
                   >
                     <div className="space-y-1">
-                      <div className="flex items-center gap-2">
-                         <span className={`text-[10px] font-black uppercase tracking-tighter px-1.5 py-0.5 rounded ${q.page_slug.includes('exam') ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'}`}>
-                           {q.page_slug.includes('exam') ? 'Zkouška' : 'Lekce'}
-                         </span>
-                         <span className="text-xs text-slate-400 font-medium">{q.title}</span>
-                      </div>
                       <h3 className="font-bold text-slate-800 leading-snug">{q.checkpoint_question}</h3>
                     </div>
                     <div className="text-slate-300 mt-1 shrink-0">
