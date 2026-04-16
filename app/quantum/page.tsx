@@ -38,6 +38,12 @@ const chapterCards = [
     title: "Strojové učení (QML)",
     text: "Hybridní algoritmy, kvantové feature spaces a realistické hodnocení přínosů pro AI.",
   },
+  {
+    href: "/quantum-7",
+    kicker: "Kapitola 7",
+    title: "Kvantové a hybridní algoritmy",
+    text: "Interference, orákula, VQE, QAOA a praktická logika dnešních hybridních kvantových workflow.",
+  },
 ];
 
 export default function QuantumEducationPage() {
@@ -53,7 +59,7 @@ export default function QuantumEducationPage() {
           </h1>
           <p className="text-lg leading-8 text-slate-600">
             Tato část je teď oddělená od otázek. Slouží čistě jako výuková osa předmětu:
-            nejprve studium šesti kapitol, potom samostatné procvičování a až nakonec
+            nejprve studium sedmi kapitol, potom samostatné procvičování a až nakonec
             závěrečná zkouška z patnácti náhodně vybraných otázek.
           </p>
         </div>
@@ -113,7 +119,7 @@ export default function QuantumEducationPage() {
           <p className="font-bold">Další krok pro obsah</p>
         </div>
         <p className="mt-3 text-sm leading-7 text-slate-600">
-          V repozitáři už máte šest zdrojových markdown přednášek v adresáři `Kvantum md`. Struktura je teď připravená tak, aby šlo každou kapitolu dál rozšířit o mnohem bohatší text právě z těchto materiálů.
+          V repozitáři už máte sedm zdrojových markdown přednášek v adresáři `Kvantum md`. Struktura je teď připravená tak, aby šlo každou kapitolu dál rozšířit o mnohem bohatší text právě z těchto materiálů.
         </p>
       </section>
     </div>

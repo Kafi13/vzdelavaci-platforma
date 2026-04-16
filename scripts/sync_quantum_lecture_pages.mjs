@@ -261,6 +261,63 @@ QML je slibný směr, ale je potřeba ho hodnotit realisticky. Ne každá úloha
 Kvantové strojové učení je zajímavé hlavně jako hybridní disciplína. Má potenciál pomoci u vybraných složitých úloh, ale jeho skutečná hodnota bude záviset na tom, zda se podaří překonat omezení dnešního hardwaru a efektivně pracovat s daty.
 `.trim(),
   },
+  {
+    slug: 'quantum-7',
+    title: '7. Kvantové a hybridní algoritmy',
+    content: `
+**Proč nestačí říct, že kvantový počítač je jen „rychlejší klasický“**
+
+Kvantový algoritmus nefunguje tak, že prostě vyzkouší všechny možnosti najednou a potom z nich vybere správnou. To je časté zjednodušení, ale ve skutečnosti je klíčem něco jiného: práce s amplitudami pravděpodobnosti a s interferencí.
+
+Kvantový výpočet tedy nestojí jen na množství paralelně reprezentovaných stavů, ale hlavně na tom, jak algoritmus zesiluje užitečné výsledky a potlačuje ty špatné.
+
+**Klasický versus kvantový přístup**
+
+Klasický algoritmus postupuje přes jasně definované kroky a stavy. Kvantový algoritmus pracuje s qubity v superpozici a během výpočtu manipuluje s jejich fází. To znamená, že návrh algoritmu je víc podobný řízení vlnění než skládání běžného programu s podmínkami a cykly.
+
+Jádrem kvantového návrhu je zajistit, aby správné cesty vedly ke konstruktivní interferenci a chybné cesty se naopak vzájemně vyrušily.
+
+**Co je kvantové orákulum**
+
+V mnoha slavných kvantových algoritmech se objevuje takzvané orákulum. Je to speciální část obvodu, která umí označit správné řešení, aniž by ho rovnou „prozradila“. Typicky to udělá tak, že změní fázi stavu odpovídajícího správné odpovědi.
+
+Tato změna sama o sobě ještě nic nevyřeší. Smysl dostane až v dalších krocích algoritmu, kde právě díky interferenci začne růst pravděpodobnost správného výsledku.
+
+**Proč jsou čistě teoretické algoritmy v praxi problém**
+
+Na papíře může orákulum vypadat elegantně. V reálném hardwaru ale bývá jeho konstrukce velmi náročná. Čím složitější funkci chceme realizovat, tím delší a křehčí je celý kvantový obvod.
+
+To je zásadní problém dnešní éry hlučných zařízení. Pokud je obvod příliš dlouhý, systém ztratí koherenci dřív, než výpočet dokončíme.
+
+**Proč dnes dominují hybridní algoritmy**
+
+Právě kvůli omezením současného hardwaru se dnes prosazují hybridní přístupy. Klasický počítač řídí optimalizaci, vyhodnocuje výsledky a spravuje většinu logiky. Kvantový procesor mezitím řeší jen úzký, ale výpočetně zajímavý krok.
+
+Je to praktický kompromis: místo jednoho dlouhého kvantového výpočtu používáme mnoho krátkých běhů, mezi nimiž klasická část upravuje parametry dalšího pokusu.
+
+**VQE: chemie, materiály a základní energie**
+
+Jedním z nejdůležitějších hybridních algoritmů je VQE. Používá se hlavně tam, kde chceme odhadnout základní energetický stav molekul nebo materiálů. To je důležité pro chemii, návrh léčiv, katalyzátorů nebo bateriových materiálů.
+
+Smyslem VQE je postupně ladit parametrizovaný kvantový obvod tak, aby měřená energie klesala co nejníže. Klasická část výpočtu hledá lepší parametry, kvantová část měří výsledek.
+
+**QAOA: optimalizace v logistice a kombinatorice**
+
+Dalším klíčovým hybridním algoritmem je QAOA. Ten cílí na kombinatorické optimalizační úlohy, kde existuje obrovské množství možných řešení a my hledáme to nejlepší nebo velmi dobré.
+
+Typickými příklady jsou plánování tras, rozvrhování, optimalizace zdrojů nebo logistické problémy. QAOA nefunguje jako zázračné univerzální řešení všech NP-těžkých úloh, ale ukazuje, jak lze kvantové a klasické metody rozumně spojit při hledání kvalitních aproximací.
+
+**Frameworky a vývojářská praxe**
+
+Dnešní kvantové algoritmy se nevyvíjejí „ručně od nuly“ na hardwaru. Klíčovou roli hrají softwarové frameworky jako Qiskit, PennyLane nebo Cirq. Umožňují navrhovat obvody, simulovat je klasicky, ladit parametry a teprve potom je posílat na reálné kvantové procesory.
+
+To je důležité i prakticky: většina vývoje dnes probíhá v hybridním workflow, kde se střídá simulace, klasická optimalizace a omezené běhy na skutečném zařízení.
+
+**Co si z kapitoly odnést**
+
+Kapitola ukazuje, že skutečná síla kvantových algoritmů neleží v jednoduché představě „všechno najednou“, ale v přesném řízení interference. Zároveň vysvětluje, proč dnešní praxe stojí hlavně na hybridních algoritmech jako VQE a QAOA, které propojují kvantový procesor s klasickou optimalizací a dávají smysl už na současném hardwaru.
+`.trim(),
+  },
 ];
 
 async function syncPages() {

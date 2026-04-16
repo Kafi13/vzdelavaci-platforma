@@ -28,6 +28,7 @@ const navItems: NavItem[] = [
           { href: "/quantum-4", label: "4. Komunikace a bezpečnost" },
           { href: "/quantum-5", label: "5. Kvantové výpočty a simulace" },
           { href: "/quantum-6", label: "6. Kvantové strojové učení (QML)" },
+          { href: "/quantum-7", label: "7. Kvantové a hybridní algoritmy" },
         ],
       },
       { href: "/quantum-practice", label: "Procvičování" },

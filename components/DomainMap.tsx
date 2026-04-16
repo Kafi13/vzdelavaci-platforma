@@ -55,6 +55,12 @@ const chapters: Chapter[] = [
     title: 'Kvantové strojové učení',
     text: 'Hybridní modely, QML use-cases a střízlivé hodnocení přínosu pro AI.',
   },
+  {
+    href: '/quantum-7',
+    number: '07',
+    title: 'Kvantové a hybridní algoritmy',
+    text: 'Interference, orákula, VQE, QAOA a praktický význam dnešních hybridních workflow.',
+  },
 ];
 
 const quickLinks = [
@@ -129,7 +135,7 @@ export default function DomainMap() {
               <div>
                 <p className="text-sm font-black text-slate-900">Doporučený postup</p>
                 <p className="mt-1 text-sm leading-6 text-slate-600">
-                  Přehled sekce → Kapitoly 1 až 6 → Procvičování → Zkouška
+                  Přehled sekce → Kapitoly 1 až 7 → Procvičování → Zkouška
                 </p>
               </div>
             </div>
@@ -173,7 +179,7 @@ export default function DomainMap() {
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200">
-            6 kapitol • 1 procvičování • 1 zkouška
+            7 kapitol • 1 procvičování • 1 zkouška
           </div>
         </div>
 
