@@ -1,0 +1,1311 @@
+[
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Jaký je zásadní rozdíl mezi první a druhou kvantovou revolucí podle textu?",
+    "options": [
+      "V první revoluci jsme kvantové jevy využívali hromadně jako statistický průměr, ve druhé izolujeme a kontrolujeme jednotlivé kvantové stavy.",
+      "První revoluce byla čistě teoretická, zatímco druhá revoluce přináší první praktické využití v podobě laserů.",
+      "Druhá kvantová revoluce zcela popírá matematické základy zformulované Schrödingerem a Heisenbergem v roce 1925.",
+      "V první revoluci jsme ovládali jednotlivé atomy, zatímco ve druhé revoluci se zaměřujeme na makroskopické objekty."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Která z následujících technologií je v textu označena za přímý důsledek první kvantové revoluce?",
+    "options": [
+      "Kvantové gravimetry pro detekci podzemních struktur",
+      "Satelitní sítě pro distribuci kvantových klíčů (QKD)",
+      "Tranzistory a integrované obvody v mobilních telefonech",
+      "Kvantové počítače v režimu FTQC (Fault-Tolerant)"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Co v pedagogické analogii s točící se mincí představuje stav kvantové superpozice?",
+    "options": [
+      "Moment, kdy se mince zastaví a padne panna nebo orel.",
+      "Situaci, kdy o minci ztratíme zájem a přestaneme ji pozorovat.",
+      "Minci, která velmi rychle přepíná mezi dvěma pevně danými polohami.",
+      "Roztočenou minci na hraně, která tvoří dynamickou kombinaci obou stavů."
+    ],
+    "correct_option_index": 3
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Jak text vysvětluje podstatu kvantového měření u qubitu?",
+    "options": [
+      "Měření pouze zpřesňuje naše znalosti o stavu, který byl předem jasně definován.",
+      "Akt měření nevratně zničí superpozici a donutí qubit vybrat si jednu z binárních hodnot.",
+      "Měření umožňuje přečíst všechny informace obsažené v superpozici najednou bez jejího poškození.",
+      "Při měření se využívá interference k tomu, aby se zabránilo kolapsu vlnové funkce."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Jak Albert Einstein nazval jev kvantového provázání (entanglement)?",
+    "options": [
+      "Neviditelné korelační vlákno",
+      "Deterministický chaos v mikrosvětě",
+      "Strašidelné působení na dálku",
+      "Komplexní lineární kombinace"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Proč je kvantové provázání (entanglement) klíčové pro výkon kvantových počítačů?",
+    "options": [
+      "Umožňuje přenos informací mezi qubity rychlostí vyšší než světlo.",
+      "Zabraňuje dekoherenci tím, že izoluje qubity od vnějšího prostředí.",
+      "Každý další provázaný qubit zdvojnásobuje celkový stavový prostor systému.",
+      "Nahrazuje potřebu chlazení systému na extrémně nízké teploty."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Který mechanismus využívají kvantové algoritmy k nalezení správného výsledku?",
+    "options": [
+      "Postupné zkoušení všech možností jednu po druhé v klasické smyčce.",
+      "Kvantovou interferenci, která zesiluje správné výsledky a ruší ty nesprávné.",
+      "Termodynamickou fluktuaci, která náhodně vybere nejvhodnější řešení.",
+      "Využití polovodičových hradel k zastavení dekoherence v průběhu výpočtu."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "K čemu text přirovnává kvantovou interferenci v běžném životě?",
+    "options": [
+      "Ke stavbě domu z karet v bouři.",
+      "K fungování sluchátek s aktivním potlačováním hluku (ANC).",
+      "K navigaci ponorek pomocí GPS signálu.",
+      "K roztočení mince na desce stolu."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Co je to dekoherence?",
+    "options": [
+      "Proces, kdy systém získává kvantové vlastnosti díky interakci s okolím.",
+      "Metoda propojování více qubitů do jednoho logického celku.",
+      "Ztráta kvantových vlastností v důsledku nevyžádané interakce s okolním prostředím.",
+      "Způsob chlazení atomů pomocí ultra-zaostřených laserových paprsků."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Která hardwarová platforma (modalita) může podle tabulky operovat za pokojové teploty?",
+    "options": [
+      "Supravodivé obvody",
+      "Zachycené ionty",
+      "Fotonika (optické qubity)",
+      "Polovodičové kvantové tečky"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Jakou hlavní výhodu mají 'Neutrální atomy' jako nosiče qubitů?",
+    "options": [
+      "Jsou z podstaty přírody identické, což eliminuje výrobní nepřesnosti.",
+      "Dosahují nejvyšší rychlosti operací ze všech známých platforem.",
+      "Nevyžadují žádné laserové ovládání ani vakuové komory.",
+      "Jsou již dnes plně integrované v domácích noteboocích."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Co označuje zkratka NISQ v kontextu současného stavu kvantových počítačů?",
+    "options": [
+      "Nový integrovaný systém kvantování",
+      "Zašuměné kvantové počítání středního měřítka",
+      "Národní institut pro simulaci kvant",
+      "Neomezený inteligentní super-kvantový procesor"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Jaký je podle textu vztah mezi kvantovými a klasickými počítači v budoucnosti?",
+    "options": [
+      "Kvantové počítače zcela nahradí klasické servery pro všechny typy úloh.",
+      "Kvantové počítače budou fungovat jako specializované koprocesory pro specifické úlohy.",
+      "Klasické počítače zaniknou, protože kvantová mechanika zrychluje prohlížení e-mailů.",
+      "Kvantové počítače budou sloužit výhradně pro hraní videoher a rendering grafiky."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Který algoritmus z roku 1994 představuje hrozbu pro současné asymetrické šifrování?",
+    "options": [
+      "Shorův algoritmus",
+      "Heisenbergův algoritmus",
+      "Einsteinův korelační algoritmus",
+      "Groverův vyhledávací algoritmus"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Co je cílem evropské infrastruktury EuroQCI?",
+    "options": [
+      "Vyvinout první kvantový smartphone pro běžné uživatele.",
+      "Vytvořit neprolomitelnou komunikační síť nad evropským kontinentem.",
+      "Nahradit všechna optická vlákna v Evropě satelitním signálem.",
+      "Zastavit výzkum kvantových materiálů v Plzni."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Jaký strategický význam mají kvantové senzory v oblasti obrany?",
+    "options": [
+      "Dokážou zneškodnit nepřátelské satelity pomocí interference.",
+      "Umožňují navigaci ponorek bez přístupu k GPS signálu.",
+      "Zvyšují rychlost internetového připojení v polních podmínkách.",
+      "Slouží k dálkovému nabíjení baterií vojenské techniky."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Úvod do kvantových technologií_ Skripta.md",
+    "question_text": "Který český projekt je v textu zmíněn jako příklad špičkového výzkumu kvantových materiálů?",
+    "options": [
+      "Quantum Plzeň 2026",
+      "EuroQCI Czechia",
+      "QM4ST (Quantum Materials for Applications in Sustainable Technologies)",
+      "ZČU Quantum Skills Academy"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Co je podle textu skutečným „motorem“ kvantového počítání, který nahrazuje mýtus o paralelním zkoušení všech řešení?",
+    "options": [
+      "Vysoká taktovací frekvence procesoru",
+      "Kvantová interference",
+      "Klasické stochastické algoritmy",
+      "Mechanické vlnění vodní hladiny"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Jaký je zásadní rozdíl mezi klasickou pravděpodobností a kvantovou amplitudou pravděpodobnosti?",
+    "options": [
+      "Amplitudy jsou vždy nezáporná reálná čísla",
+      "Klasické pravděpodobnosti jsou komplexní čísla",
+      "Amplitudy jsou komplexní čísla a mohou mít fázi (znaménko)",
+      "Součet amplitud přes všechny stavy musí být roven nule"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "K jakému jevu dochází při destruktivní interferenci dvou vln?",
+    "options": [
+      "Vlny se sečtou a vytvoří dvojnásobnou výšku",
+      "Vlny se vzájemně vyruší, protože jsou v protifázi",
+      "Vlny změní svou frekvenci na polovinu",
+      "Vlny se změní na diskrétní bity"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Proč musí být kvantová hradla podle textu striktně reverzibilní (vratná)?",
+    "options": [
+      "Kvůli úspoře místa na křemíkovém waferu",
+      "Protože to vyžaduje unitární charakter kvantového vývoje",
+      "Aby bylo možné používat hradla AND a OR",
+      "Aby nedocházelo k dekoherenci"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Jakou funkci plní Hadamardovo hradlo (H) v kvantovém obvodu?",
+    "options": [
+      "Překlopí cílový qubit pouze tehdy, je-li řídicí qubit ve stavu 1",
+      "Prováže dva qubity do stavu entanglementu",
+      "Transformuje qubit do stavu dokonalé superpozice",
+      "Provádí měření qubitu na konci výpočtu"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Které hradlo je v textu označeno za klíčové pro generování kvantového provázání (entanglementu)?",
+    "options": [
+      "Hadamardovo hradlo",
+      "Hradlo CNOT",
+      "Hradlo NOT",
+      "Fázové hradlo"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "U jakého počtu interagujících elektronů začíná paměť současných superpočítačů narážet na limity klasické simulace?",
+    "options": [
+      "Zhruba u 10 až 15 elektronů",
+      "Zhruba u 40 až 50 elektronů",
+      "Až u několika tisíc elektronů",
+      "Klasické počítače elektrony simulovat neumí"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Jaké procento celosvětově vyprodukované energie spotřebovává průmyslový Haber-Boschův proces výroby hnojiv?",
+    "options": [
+      "Zhruba 0,5 %",
+      "Zhruba 2 %",
+      "Zhruba 10 %",
+      "Zhruba 25 %"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Který enzym dokáže v přírodě štěpit dusík při pokojové teplotě a tlaku?",
+    "options": [
+      "Cytochrom P450",
+      "Hemoglobin",
+      "Nitrogenáza",
+      "Amyláza"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Co se podařilo společnosti IBM nasimulovat v březnu 2026 pomocí 100 qubitů?",
+    "options": [
+      "Kompletní lidský genom",
+      "Nová molekula s polo-Möbiovou dráhou elektronů",
+      "Průběh jaderné fúze",
+      "Šifrovací klíč RSA-2048"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Na jaký matematický problém převádí Shorův algoritmus proces faktorizace (rozkladu čísla)?",
+    "options": [
+      "Hledání nejkratší cesty v grafu",
+      "Hledání periody opakující se funkce",
+      "Inverze matic velkých rozměrů",
+      "Prohledávání nestrukturované databáze"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Kolik kroků (iterací) potřebuje Groverův algoritmus k nalezení prvku v databázi o milionu položek?",
+    "options": [
+      "Zhruba 500 000",
+      "Zhruba 1 000 000",
+      "Zhruba 1 000",
+      "Zhruba 10"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Jaká hardwarová platforma využívá k uvěznění atomů rubidia tzv. optické pinzety (lasery)?",
+    "options": [
+      "Supravodivé obvody (IBM)",
+      "Uvězněné ionty (Quantinuum)",
+      "Neutrální atomy (Pasqal)",
+      "Křemíkové tranzistory (Intel)"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Co je to dekoherence?",
+    "options": [
+      "Proces opravy chyb v kvantovém procesoru",
+      "Ztráta kvantových vlastností v důsledku interakce s okolním šumem",
+      "Zvýšení výpočetního výkonu pomocí podchlazení",
+      "Synchronizace fází u konstruktivní interference"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Co říká „teorém o zákazu klonování“ (no-cloning theorem)?",
+    "options": [
+      "Kvantové počítače nesmí být vyráběny sériově",
+      "Neznámý kvantový stav nelze replikovat (zkopírovat)",
+      "Software pro kvantové počítače nelze pirátsky šířit",
+      "Logický qubit nemůže obsahovat více než jeden fyzický qubit"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Jaký je hlavní rozdíl mezi fyzickým a logickým qubitem?",
+    "options": [
+      "Logický qubit je materiální součástka, fyzický je pouze v softwaru",
+      "Fyzický qubit je odolný vůči chybám, logický qubit trpí dekoherencí",
+      "Logický qubit je abstraktní entita udržovaná mnoha fyzickými qubity pro opravu chyb",
+      "Mezi fyzickým a logickým qubitem není v roce 2026 žádný rozdíl"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové Počítače_ Principy, Aplikace, Limity.md",
+    "question_text": "Kdy se podle roadmap dominantních společností očekává nástup éry plně chybám odolných počítačů (FTQC)?",
+    "options": [
+      "Již v roce 2024",
+      "V horizontu let 2029 až 2033",
+      "Pravděpodobně až v roce 2100",
+      "Tato éra byla v textu označena za nereálnou"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Jak se v éře „chybově tolerantních systémů“ (fault-tolerant foundation era) primárně měří technologický pokrok kvantových počítačů?",
+    "options": [
+      "Pouze celkovým počtem surových fyzických qubitů.",
+      "Schopností efektivně korigovat chyby a škálovat výkon pomocí logických qubitů.",
+      "Snižováním nákladů na podchlazení akademických laboratoří.",
+      "Rychlostí vývoje nových molekulárních léčiv."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Na jakém matematickém předpokladu je založena bezpečnost algoritmu RSA v klasické kryptografii?",
+    "options": [
+      "Na složitosti výpočtu nelineárních rovnic v tisícirozměrném prostoru.",
+      "Na extrémní výpočetní náročnosti faktorizace (rozkladu) velkých čísel na prvočísla.",
+      "Na fyzikální nemožnosti zkopírovat optický signál v kabelu.",
+      "Na použití symetrického klíče, který obě strany sdílejí předem."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Které dvě fundamentální vlastnosti kvantové mechaniky využívá Shorův algoritmus k urychlení faktorizace?",
+    "options": [
+      "Kvantovou teleportaci a fázovou korelaci.",
+      "Stimulovanou emisi a absorpci fotonů.",
+      "Kvantovou superpozici a interferenci.",
+      "Heisenbergův princip neurčitosti a Rayleighův rozptyl."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Kdy podle expertních a zpravodajských analýz z počátku roku 2026 pravděpodobně nastane tzv. Q-Day?",
+    "options": [
+      "Již v roce 2027.",
+      "Kolem roku 2030.",
+      "V roce 2045.",
+      "Na konci 21. století."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "V čem spočívá strategie útočníků známá jako „Harvest now, decrypt later“?",
+    "options": [
+      "V okamžitém prolomení symetrické šifry AES-256 pomocí hrubé síly.",
+      "V ukládání dnešních zašifrovaných dat s cílem dešifrovat je v budoucnu pomocí kvantového počítače.",
+      "V napadení kvantových počítačů dříve, než stačí vygenerovat šifrovací klíče.",
+      "V instalaci virů do datových center ještě před příchodem Q-Day."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Co podle textu dokazuje Teorém o zákazu klonování (No-cloning theorem)?",
+    "options": [
+      "Že kvantové počítače nikdy nebudou moci kopírovat klasická data.",
+      "Že je fyzikálně nemožné vytvořit dokonalou kopii libovolného neznámého kvantového stavu.",
+      "Že útočník může zkopírovat foton, pokud zná jeho polarizační bázi.",
+      "Že optické vlákno nelze napíchnout bez přerušení dodávky elektřiny."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "K čemu v kvantové komunikaci slouží technologie QKD (Quantum Key Distribution)?",
+    "options": [
+      "K přímému přenosu zašifrovaných velkoobjemových dat (např. videí).",
+      "Výhradně k bezpečnému vytvoření a distribuci náhodného šifrovacího klíče.",
+      "K zesílení slábnoucího světelného signálu v optických kabelech.",
+      "K opravě chyb v klasických internetových protokolech."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Které dvě měřicí báze se používají v protokolu BB84 pro kódování logických hodnot?",
+    "options": [
+      "Vertikální a horizontální báze.",
+      "Přímočará (rectilinear) a diagonální báze.",
+      "Kruhová a eliptická báze.",
+      "Heisenbergova a Schrödingerova báze."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Co se děje v protokolu BB84 během fáze zvané „Sifting“ (třídění)?",
+    "options": [
+      "Alice a Bob si přes veřejný kanál sdělují naměřené bitové hodnoty (0 a 1).",
+      "Alice a Bob si porovnávají pouze typy použitých bází pro každý foton.",
+      "Bob posílá Alici zpět fotony, které nestihl změřit.",
+      "Útočník Eva se pokouší uhodnout náhodný klíč."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Jaká metrika se v QKD používá k prokazatelnému odhalení přítomnosti odposlechu?",
+    "options": [
+      "QBER (Quantum Bit Error Rate).",
+      "AES-256 Encryption Level.",
+      "Sifted Key Length.",
+      "Optical Fiber Rayleigh Index."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Proč nelze v kvantových sítích používat klasické optické zesilovače (EDFA)?",
+    "options": [
+      "Protože jsou příliš pomalé pro přenos jednotlivých fotonů.",
+      "Protože proces zesílení (klonování fotonů) nevratně ničí kvantové stavy.",
+      "Protože klasické zesilovače neumí pracovat s laserem.",
+      "Protože vyžadují napojení na veřejný internet, který není bezpečný."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Jak se nazývá proces v kvantovém opakovači, který umožní provázat fotony, jež se nikdy nepotkaly?",
+    "options": [
+      "Quantum Sifting.",
+      "Privacy Amplification.",
+      "Entanglement swapping (prohození provázání).",
+      "Single-photon absorption."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Co je hlavním rysem Post-Kvantové Kryptografie (PQC)?",
+    "options": [
+      "Vyžaduje instalaci speciálních detektorů fotonů do každého zařízení.",
+      "Jde o softwarové řešení založené na matematice odolné vůči kvantovým algoritmům.",
+      "Spoléhá se na kvantové provázání mezi satelitem a mobilním telefonem.",
+      "Využívá k šifrování výhradně Shorův algoritmus."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Který algoritmus schválený NIST jako standard FIPS 203 slouží k výměně klíčů (ML-KEM)?",
+    "options": [
+      "CRYSTALS-Dilithium.",
+      "SPHINCS+.",
+      "CRYSTALS-Kyber.",
+      "RSA-2048."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Která země vypustila v roce 2016 první kvantový komunikační satelit Micius?",
+    "options": [
+      "USA.",
+      "Čína.",
+      "Česká republika.",
+      "Rumunsko."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Která tři města tvoří hlavní páteřní trojúhelník české kvantové sítě CZQCI?",
+    "options": [
+      "Praha, Plzeň, České Budějovice.",
+      "Praha, Brno, Ostrava.",
+      "Brno, Olomouc, Ostrava.",
+      "Praha, Pardubice, Liberec."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová komunikace a bezpečnost_ Nové základy.md",
+    "question_text": "Která technologická společnost dodává hardwarovou vrstvu (14 QKD párů) pro český projekt CZQCI?",
+    "options": [
+      "ID Quantique.",
+      "IonQ.",
+      "Toshiba.",
+      "Google."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jak je v textu definována role dekoherence v kontextu kvantové senzoriky?",
+    "options": [
+      "Jako největší překážka bránící praktickému nasazení senzorů",
+      "Jako jev, který je nutné zcela eliminovat pomocí kryogenních systémů",
+      "Jako primární mechanismus a největší výhoda kvantového senzoru",
+      "Jako proces, který nemá na funkci kvantových senzorů žádný vliv"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Který fyzikální jev je v textu zmíněn jako příčina posunu energetických hladin Hamiltonianu při vystavení NV centra vnějšímu magnetickému poli?",
+    "options": [
+      "Rayleighův limit",
+      "Zeemanův jev",
+      "Josephsonův jev",
+      "Sagnacův efekt"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jaká je podle textu hlavní výhoda optických atomových hodin oproti hodinám cesiovým?",
+    "options": [
+      "Využívají mikrovlnné frekvence, které jsou stabilnější",
+      "Jsou potenciálně až tisíckrát přesnější díky vyšší frekvenci oscilátoru",
+      "Nevyžadují k provozu laserové systémy ani vakuum",
+      "Jsou odolnější vůči gravitační dilataci času"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Kolik sekund by se podle textu zpozdily nejmodernější optické hodiny za dobu odpovídající dvojnásobku stáří vesmíru?",
+    "options": [
+      "Jednu mikrosekundu",
+      "Jednu milisekundu",
+      "Jednu sekundu",
+      "Deset sekund"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jaká je charakteristická vlastnost hodin v optické mřížce (Optical Lattice Clocks) podle textu?",
+    "options": [
+      "Pracují s jediným uvězněným iontem v Paulově pasti",
+      "Využívají mikrovlnné záření o frekvenci přesně 9,2 GHz",
+      "Pracují s tisíci neutrálních atomů současně pro rychlé potlačení šumu",
+      "Jsou určeny výhradně pro provoz v hlubokém vesmíru"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Co umožňuje optickým hodinám fungovat jako absolutní výškoměry v rámci tzv. relativistické geodézie?",
+    "options": [
+      "Měření změn tlaku vzduchu pomocí laserů",
+      "Detekce gravitační dilatace času při změně výšky o pouhý jeden centimetr",
+      "Využití kvantového tunelování v Josephsonových spojích",
+      "Analýza fázového posunu de Broglieových vln v kapalině"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Z čeho se skládá základní konfigurace senzoru SQUID?",
+    "options": [
+      "Z diamantové mřížky s vakancí dusíku",
+      "Z nelineárního krystalu beta-boritanu barnatého",
+      "Ze supravodivé smyčky přerušené dvěma Josephsonovými spoji",
+      "Z magneto-optické pasti naplněné atomy rubidia"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Proč je magnetoencefalografie (MEG) při mapování mozku přesnější než EEG?",
+    "options": [
+      "Protože magnetické pole prochází lebkou bez zkreslení",
+      "Protože nevyžaduje žádné stínění ani kryogenní chlazení",
+      "Protože využívá elektrické potenciály na povrchu kůže",
+      "Protože pracuje s frekvencemi v řádech stovek terahertzů"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jaká mikrovlnná frekvence odpovídá jevu Zero Field Splitting u NV centra v diamantu?",
+    "options": [
+      "9,19 GHz",
+      "400 THz",
+      "2,87 GHz",
+      "532 nm"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Která technika se používá k měření stavu NV centra pomocí laseru a mikrovln?",
+    "options": [
+      "Spontánní parametrická sestupná konverze (SPDC)",
+      "Opticky detekovaná magnetická rezonance (ODMR)",
+      "Relativistická geodézie",
+      "Duchové zobrazování (Ghost Imaging)"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Co se stane s intenzitou červeného světla u NV centra, pokud se elektronový spin nachází v tzv. 'temném stavu'?",
+    "options": [
+      "Intenzita výrazně vzroste",
+      "Dojde k výraznému poklesu intenzity emitovaného světla",
+      "Vlnová délka světla se změní na zelenou",
+      "Intenzita světla zůstává neměnná"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Na jakém fyzikálním principu je založena atomová interferometrie využívaná v gravimetrech?",
+    "options": [
+      "Na supravodivosti Cooperových párů",
+      "Na korpuskulárně-vlnovém dualismu atomů (de Broglieovy vlny)",
+      "Na nelineární optice v krystalech niobu",
+      "Na tepelné roztažnosti krystalové mřížky diamantu"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Který atom se v textu uvádí jako nejčastěji používaný v atomových interferometrech?",
+    "options": [
+      "Cesium-133",
+      "Rubidium-85",
+      "Niob",
+      "Uhlík"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jak řeší kvantová navigace ponorek absenci GPS signálu pod vodou?",
+    "options": [
+      "Vysíláním vlastních radiových vln k hladině",
+      "Měřením gravitačních anomálií a jejich porovnáváním s referenční mapou",
+      "Využitím optických mřížek k detekci slunečního světla",
+      "Sledováním magnetických polí generovaných jinými ponorkami"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jakou funkci má 'kyblíkový detektor' v systémech Ghost Imaging?",
+    "options": [
+      "Má vysoké prostorové rozlišení a tvoří finální obraz",
+      "Rozděluje fotony na signální a jalové",
+      "Konstatuje pouze přítomnost fotonu bez prostorového rozlišení",
+      "Ochlazuje vzorek na teplotu tekutého hélia"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "V čem spočívá hlavní výhoda kvantového radaru v taktickém nasazení?",
+    "options": [
+      "Dokáže vysílat signály, které jsou pro nepřítele nerozeznatelné od tepelného šumu",
+      "Zcela eliminuje potřebu jakýchkoliv antén",
+      "Funguje pouze při extrémně vysokých teplotách",
+      "Využívá k detekci výhradně mechanické vibrace vzduchu"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantová senzorika_ Principy a Aplikace.md",
+    "question_text": "Jaký je podle textu aktuální operační teplotní bod pro potlačení šumu u kvantového radaru (v roce 2026)?",
+    "options": [
+      "Pokojová teplota (300 K)",
+      "Absolutní nula (0 K)",
+      "Teplota kapalného dusíku (77 K)",
+      "Teplota tání wolframu"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Jaký je podle textu hlavní rozdíl v kódování informace mezi klasickým bitem a kvantovým qubitem?",
+    "options": [
+      "Bit využívá lineární kombinaci stavů, zatímco qubit se spoléhá na makroskopické toky elektronů.",
+      "Bit je reprezentován přítomností/nepřítomností náboje, zatímco qubit využívá superpozici a provázání.",
+      "Qubit je kódován pomocí miliard elektronů, zatímco bit využívá vlnové funkce jednotlivých částic.",
+      "Mezi bitem a qubitem není z hlediska fyzikální platformy žádný zásadní rozdíl."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "K čemu text přirovnává snahu o udržení kvantové superpozice v pevném materiálu?",
+    "options": [
+      "K položení těžkého kamene na stůl během bouře.",
+      "K udržení mýdlové bubliny uprostřed zuřící bouře.",
+      "K tanci armádního praporu na hladkém parketu.",
+      "K zauzlování tkaničky, kterou nelze snadno rozvázat."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Který izotop křemíku je v textu označen za nejkritičtější problém pro stabilitu spinových qubitů?",
+    "options": [
+      "Izotop 28Si",
+      "Izotop 30Si",
+      "Izotop 29Si",
+      "Izotop 31Si"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Co způsobuje tzv. „nábojový šum“ na rozhraní křemíku a jeho oxidu?",
+    "options": [
+      "Fluktuace jaderných spinů izotopu 29Si.",
+      "Pasti zachytávající náboj (charge traps), které neustále zachytávají a uvolňují elektrony.",
+      "Tepelné vibrace krystalové mřížky známé jako fonony.",
+      "Vzájemné odpuzování Cooperových párů v supravodiči."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Jak vzniká v supravodiči podle BCS teorie tzv. Cooperův pár?",
+    "options": [
+      "Elektrony se spojí díky silné coulombovské přitažlivé síle.",
+      "Dva elektrony se spojí prostřednictvím fononem zprostředkovaného atraktivního mechanismu.",
+      "Elektrony se srazí s vibrujícími ionty mřížky a tím vytvoří vázaný stav.",
+      "Jeden elektron se změní v boson a přitáhne k sobě druhý fermion."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Proč je pro kvantové inženýrství klíčové, že se Cooperův pár chová jako boson?",
+    "options": [
+      "Protože bosony podléhají Pauliho vylučovacímu principu.",
+      "Protože bosony se navzájem silně odpuzují a vytvářejí tak nábojový štít.",
+      "Protože bosony mohou sdílet identický kvantový stav a zkondenzovat do makroskopické vlnové funkce.",
+      "Protože bosony jsou imunní vůči magnetickému poli."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Z čeho se skládá klasický Josephsonův přechod, který je průmyslovým standardem?",
+    "options": [
+      "Dva izolanty oddělené tenkou vrstvou supravodiče.",
+      "Dva supravodiče oddělené tenkou vrstvou izolantu (typicky oxidu hlinitého).",
+      "Vrstva diamantu s NV centrem vložená mezi dva křemíkové plátky.",
+      "Dvě vrstvy grafenu zrotované o magický úhel."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Jakým způsobem transmon qubit řeší slabinu dřívějších designů (Cooper-pair boxů)?",
+    "options": [
+      "Přidáním obrovského zkratovacího kondenzátoru pro snížení citlivosti na nábojový šum.",
+      "Využitím izotopově čistého hliníku k eliminaci jaderného spinu.",
+      "Provozem při pokojové teplotě díky vysoké Debyeově teplotě hliníku.",
+      "Nahrazením supravodivého proudu proudem fotonů."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Díky jaké vlastnosti diamantové mřížky mohou NV centra fungovat i při pokojové teplotě?",
+    "options": [
+      "Díky nízkému zakázanému pásu (pod 1 eV).",
+      "Díky extrémně vysoké Debyeově teplotě, která zajišťuje rigiditu mřížky a minimum tepelných vibrací.",
+      "Díky přítomnosti supravodivých Cooperových párů v krystalové mřížce uhlíku.",
+      "Díky tomu, že diamant je tekutý krystal reagující na elektrické pole."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Jaká barva fluorescence NV centra v diamantu značí stav, kdy je intenzita záře utlumena?",
+    "options": [
+      "Zelená fluorescence v excitovaném stavu.",
+      "Červená fluorescence ve spinovém stavu ms = ±1.",
+      "Modrá fluorescence v základním stavu ms = 0.",
+      "Červená fluorescence v základním stavu ms = 0."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Co je to „topologická ochrana“ u kvantových materiálů podle analogie s tkaničkou?",
+    "options": [
+      "Informace je kódována jako rovná tkanička, kterou lze snadno ohnout.",
+      "Informace je kódována v uzlu na tkaničce, který zůstává zachován i při třesení či ohýbání.",
+      "Informace je chráněna neustálým laserovým chlazením mřížky.",
+      "Informace je uložena v chemických vazbách mezi atomy bismutu."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Co se děje na povrchu topologických izolantů díky jevu „spin-momentum locking“?",
+    "options": [
+      "Elektrony se zastaví a vytvoří ploché energetické pásy.",
+      "Směr spinu elektronu je pevně svázán se směrem jeho pohybu, což brání odrazu od nečistot.",
+      "Elektrony tunelují skrz izolační bariéru pomocí Josephsonova jevu.",
+      "Materiál se uvnitř objemu stává dokonalým vodičem."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "U materiálu MATBG (Magic-Angle Twisted Bilayer Graphene) dochází k unikátnímu chování při rotaci vrstev o úhel:",
+    "options": [
+      "4,7 stupně",
+      "1,05 stupně",
+      "0,1 stupně",
+      "90 stupňů"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Jak se nazývá nelineární optický proces, při kterém se jeden vysokoenergetický foton štěpí na dva provázané dceřiné fotony?",
+    "options": [
+      "Opticky detekovaná magnetická rezonance (ODMR)",
+      "Meissnerův jev",
+      "Spontánní parametrická sestupná konverze (SPDC)",
+      "Zeemanovo štěpení"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "V čem spočívá technologický průlom z roku 2026 v oblasti generování provázaných fotonů?",
+    "options": [
+      "V náhradě rigidních anorganických mřížek adaptabilními tekutými krystaly.",
+      "V objevu, že fotony lze přenášet přes měděné koaxiální kabely bez tepelných ztrát.",
+      "V použití hliníkových bariér k odstínění nábojového šumu u fotonů.",
+      "V úplné eliminaci nelineárních krystalů z kvantové komunikace."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Co je cílem amerického projektu „Genesis Mission“ spuštěného v březnu 2026?",
+    "options": [
+      "Výroba diamantů s NV centry pro biomedicínu.",
+      "Budování závodů pro izolaci ultračistého izotopového plynného silanu a germanu.",
+      "Vývoj ředicích kryostatů fungujících bezhelia-4.",
+      "Konstrukce kvantového internetu pomocí satelitů."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové materiály_ Základ kvantových technologií.md",
+    "question_text": "Co v kvantovém inženýrství označuje termín „zadrátovací krize“ (wiring crisis)?",
+    "options": [
+      "Nedostatek mědi na světových trzích pro výrobu kvantových procesorů.",
+      "Problém s odvodem parazitního tepla koaxiálními kabely do milikelvinového prostředí kryostatu.",
+      "Nemožnost propojit více než dva qubity pomocí supravodivých drátů.",
+      "Selhání optických vláken při pokusu o přenos Majorana fermionů."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "K jakému principu v klasické výpočetní technice přirovnávají odborníci technologický zlom v roce 2026?",
+    "options": [
+      "K objevu internetu",
+      "K éře těsně před plošným nasazením tranzistorů",
+      "K vynálezu prvních sálových počítačů",
+      "K masovému rozšíření chytrých telefonů"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Jak se v kvantovém systému projeví přidání jednoho dalšího qubitu do registru?",
+    "options": [
+      "Lineárně zvýší paměťovou kapacitu",
+      "Zdvojnásobí dimenzi výpočetního stavového prostoru",
+      "Ztrojnásobí počet možných logických operací",
+      "Zvýší výpočetní výkon o pevně stanovených 50 %"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Co přesně označuje termín 'I/O Bottleneck' v kontextu QML?",
+    "options": [
+      "Neschopnost kvantových procesorů provádět logické operace",
+      "Nedostatek kvantových algoritmů pro hluboké učení",
+      "Pomalý a nákladný proces načítání klasických dat do kvantového stavu",
+      "Rychlou dekoherenci qubitů během výstupu dat"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Která metoda kvantového kódování dat vyžaduje přesně jeden qubit pro každý jednotlivý příznak (feature)?",
+    "options": [
+      "Amplitudové kódování",
+      "IQP kódování",
+      "Hamiltoniánské kódování",
+      "Úhlové kódování (Angle Embedding)"
+    ],
+    "correct_option_index": 3
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Proč amplitudové kódování v praxi u vysokodimenzionálních dat často 'maže' kvantové urychlení?",
+    "options": [
+      "Protože vyžaduje příliš mnoho qubitů",
+      "Kvůli extrémně vysoké časové složitosti přípravy stavu (až O(2^n))",
+      "Protože nedokáže pracovat s nelineárními daty",
+      "Z důvodu nízké přesnosti při reprezentaci obrázků"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Jaké přesnosti dosáhlo IQP kódování v kombinaci s QSVM v biomedicínské studii z roku 2025?",
+    "options": [
+      "87,1 %",
+      "93,1 %",
+      "75,5 %",
+      "99,9 %"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "U kterého typu matic umožňuje technika 'block-encoding' exponenciální zlepšení výkonu?",
+    "options": [
+      "U náhodně generovaných matic",
+      "U diagonálních matic s nulovými prvky",
+      "U specifických rodin matic, jako jsou Toeplitzovy matice",
+      "U hustých matic s vysokým rankem"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Který registr v architektuře U-QRAM slouží jako cílová destinace pro výsledek dotazu?",
+    "options": [
+      "Registr adresy (A)",
+      "Paměťový registr (M)",
+      "Pomocný registr (ancilla)",
+      "Výstupní datový registr (D)"
+    ],
+    "correct_option_index": 3
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Jaký je hlavní argument proti využití 'aktivní' QRAM v akademické debatě roku 2026?",
+    "options": [
+      "Vysoké náklady obětované příležitosti (opportunity cost) vzhledem ke klasickým superpočítačům",
+      "Absolutní fyzikální nemožnost konstrukce aktivních routerů",
+      "Neschopnost aktivní QRAM pracovat se superpozicí adres",
+      "Příliš vysoká spotřeba kapalného hélia"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Co je charakteristické pro éru NISQ (Noisy Intermediate-Scale Quantum)?",
+    "options": [
+      "Počítače s miliony bezchybných qubitů",
+      "Existence desítek až tisícovek fyzických qubitů zatížených šumem",
+      "Výhradní použití pasivních kvantových pamětí",
+      "Absence nutnosti používat klasické procesory"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Co v Parametrizovaných kvantových obvodech (PQC) odpovídá synaptickým vahám klasických neuronových sítí?",
+    "options": [
+      "Počet měření (shots)",
+      "Úhly rotací kvantových hradel",
+      "Doba dekoherence qubitů",
+      "Typ použitého QRAM registru"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Jaké pravidlo se v hybridní smyčce nejčastěji používá pro výpočet derivací kvantových obvodů?",
+    "options": [
+      "Pravidlo zpětného šíření (Backpropagation rule)",
+      "Pravidlo posunu parametrů (Parameter-shift rule)",
+      "Heistovo pravidlo optimality",
+      "Pravidlo Hamiltoniánské derivace"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Co v didaktické analogii s kuličkami na stole představuje proces 'Kvantového mapování rysů'?",
+    "options": [
+      "Smazání kuliček ze stolu",
+      "Nakreslení kličkující čáry mezi kuličkami",
+      "Úder do stolu, který kuličky vyhodí do trojrozměrného prostoru",
+      "Rozdělení kuliček podle jejich hmotnosti"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Jak se nazývá statistická nejistota kvantového měření, která navyšuje počet nutných ohodnocení obvodu u QSVM?",
+    "options": [
+      "Termální šum",
+      "Shot noise",
+      "Hradlový drift",
+      "Křížová interference"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Jaký mechanismus využívá model HQCNN-REGA k zachycení složitých nelineárních specifik obrazových dat?",
+    "options": [
+      "Znovunahrávání dat (data re-uploading) napříč vrstvami",
+      "Zvětšení počtu qubitů na 65 000",
+      "Přechod na plně pasivní QRAM",
+      "Využití výhradně lineárních rotací"
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Která oblast je v textu označena jako doména s nejvyšší pravděpodobností brzkého užití QML?",
+    "options": [
+      "Rozpoznávání koček na digitálních fotografiích",
+      "Generování konverzačního textu pro chatboty",
+      "Analýza dat s přirozeným, nativně kvantovým původem (např. chemické reakce)",
+      "Optimalizace běžného internetového vyhledávání"
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové strojové učení_ Budoucnost AI.md",
+    "question_text": "Které konsorcium provedlo audit kvantových technik v průmyslové optimalizaci pro automobilový a chemický průmysl?",
+    "options": [
+      "Quantum Insider Network",
+      "QCHALLenge",
+      "Amazon Web Services Research",
+      "BCI-Quantum Alliance"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Který rozšířený mýtus o kvantových algoritmech kapitola výslovně odmítá?",
+    "options": [
+      "Že kvantové počítače potřebují chlazení.",
+      "Že kvantový počítač jen zkouší všechna řešení současně a pak si správné vybere.",
+      "Že klasické algoritmy mohou být pravděpodobnostní.",
+      "Že logistické úlohy bývají kombinatoricky náročné."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "S jakým matematickým objektem kvantové algoritmy podle textu během výpočtu pracují?",
+    "options": [
+      "S diskrétními pravdivostními tabulkami bez fáze.",
+      "Pouze s kladnými reálnými pravděpodobnostmi.",
+      "S komplexními amplitudami pravděpodobnosti.",
+      "Výhradně s deterministickými registry bitů."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Co je podle kapitoly skutečným zdrojem síly kvantového algoritmu?",
+    "options": [
+      "Pouhé současné reprezentování mnoha stavů bez další manipulace.",
+      "Přesné řízení interference, které zesiluje správné výsledky a tlumí chybné.",
+      "Mechanické urychlení výpočtu pomocí nižší teploty čipu.",
+      "Převod každé úlohy do klasické pravděpodobnostní simulace."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jaký efekt má destruktivní interference?",
+    "options": [
+      "Zrychluje měření tím, že zvětšuje počet qubitů.",
+      "Ruší amplitudy nesprávných řešení a snižuje jejich pravděpodobnost.",
+      "Zajišťuje, že kvantová hradla nemusí být reverzibilní.",
+      "Převádí kvantový algoritmus na klasický Monte Carlo postup."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jakou vlastnost musí mít kvantová operace, aby respektovala kvantovou mechaniku podle textu?",
+    "options": [
+      "Musí být nevratná, aby uměla zahazovat informaci.",
+      "Musí být unitární a reverzibilní.",
+      "Musí vždy používat pomocný ancilla qubit.",
+      "Musí být implementovaná pouze opticky."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Co je v kontextu kvantových algoritmů orákulum?",
+    "options": [
+      "Zařízení, které přímo vypíše správnou odpověď na konzoli.",
+      "Typ chladicího modulu pro NISQ hardware.",
+      "Funkce nebo obvod, který umí označit správné řešení bez prozrazení cesty k němu.",
+      "Metoda pro převod qubitů na klasické bity bez měření."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jak funguje fázové orákulum v typickém případě popsaném v kapitole?",
+    "options": [
+      "Uloží správnou odpověď do nového klasického registru.",
+      "Změní fázi stavu odpovídajícího správnému řešení.",
+      "Smaže všechny nesprávné stavy z Hilbertova prostoru.",
+      "Změří průběžně každou větev výpočtu."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Proč sama změna fáze ve fázovém orákulu ještě problém neřeší?",
+    "options": [
+      "Protože bez dalších kroků se neprojeví jako zvýšení pravděpodobnosti správné odpovědi.",
+      "Protože fázi lze měřit přímo bez kolapsu stavu.",
+      "Protože orákulum funguje jen u klasických databází.",
+      "Protože amplitudy v kvantovém výpočtu nikdy nemají znaménko."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jakého asymptotického zrychlení dosahuje Groverův algoritmus oproti lineárnímu klasickému hledání podle textu?",
+    "options": [
+      "Exponenciálního zrychlení.",
+      "Kvadratického zrychlení.",
+      "Žádného, obě metody jsou asymptoticky stejné.",
+      "Logaritmického zpomalení."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Proč jsou čistě teoretická orákula v praxi často problematická?",
+    "options": [
+      "Vyžadují obvody, které mohou být příliš hluboké a hardwarově drahé.",
+      "Nelze je matematicky zapsat jako funkce.",
+      "Používají jen klasická hradla AND a OR.",
+      "Fungují pouze v biologických systémech."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Co je hlavním omezením dnešních NISQ zařízení zdůrazněným v kapitole?",
+    "options": [
+      "Nedostatek programovacích jazyků.",
+      "Příliš vysoká přesnost, která komplikuje optimalizaci.",
+      "Šum a dekoherence, které omezují délku kvantového obvodu.",
+      "Nemožnost používat klasické procesory společně s QPU."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jaká je základní logika variačních kvantových algoritmů (VQA)?",
+    "options": [
+      "Nahradit klasickou optimalizaci čistě kvantovým výpočtem bez iterací.",
+      "Rozdělit práci mezi klasický optimalizátor a krátké parametrizované kvantové běhy.",
+      "Provést jediné velmi dlouhé měření bez zpětné vazby.",
+      "Používat výhradně fotonické qubity bez klasické části."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Co v analogii dirigenta a orchestru představuje klasický procesor?",
+    "options": [
+      "Orchestr, který vytváří provázané kvantové stavy.",
+      "Dirigenta, který upravuje parametry a vyhodnocuje výsledek.",
+      "Sál, ve kterém probíhá měření.",
+      "Pomocný ancilla qubit."
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jaký typ problému je hlavní doménou algoritmu VQE podle kapitoly?",
+    "options": [
+      "Přesné třídění obrázků v počítačovém vidění.",
+      "Lineární vyhledávání v neuspořádané databázi.",
+      "Odhad základního energetického stavu molekul a materiálů.",
+      "Šifrování komunikace pomocí kvantové distribuce klíčů."
+    ],
+    "correct_option_index": 2
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Na jaký typ úloh se v kapitole váže algoritmus QAOA?",
+    "options": [
+      "Na kombinatorickou optimalizaci, například trasy a rozvrhy.",
+      "Na opravu chyb v logických qubitech FTQC.",
+      "Na přímou konstrukci kvantových komunikačních satelitů.",
+      "Na generování náhodných čísel pro kryptografii."
+    ],
+    "correct_option_index": 0
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Které frameworky kapitola jmenuje jako hlavní nástroje pro dnešní vývoj kvantových algoritmů?",
+    "options": [
+      "NumPy, Pandas a Matplotlib",
+      "Qiskit, PennyLane a Cirq",
+      "CUDA, OpenCL a Vulkan",
+      "TensorRT, Flask a Redis"
+    ],
+    "correct_option_index": 1
+  },
+  {
+    "chapter_id": "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+    "question_text": "Jaký krok je podle kapitoly běžný ještě před spuštěním algoritmu na reálném kvantovém hardwaru?",
+    "options": [
+      "Přímé nasazení bez testování, aby se předešlo zkreslení simulátorem.",
+      "Nejprve kompletní ověření na klasickém simulátoru obvodů.",
+      "Povinné převedení algoritmu do jazyka C++ bez Pythonu.",
+      "Ruční měření všech qubitů po každém hradle."
+    ],
+    "correct_option_index": 1
+  }
+]
