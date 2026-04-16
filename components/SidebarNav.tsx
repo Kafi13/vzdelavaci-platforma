@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 interface NavItem {
@@ -66,14 +67,37 @@ export default function SidebarNav({ isAdmin = false }: { isAdmin?: boolean }) {
   const items = isAdmin
     ? [...navItems, { href: "/admin/results", label: "Administrace" }]
     : navItems;
+  const [expandedItems, setExpandedItems] = useState<Record<string, boolean>>({});
 
   const isItemActive = (item: NavItem): boolean =>
     pathname === item.href || item.subItems?.some((subItem) => isItemActive(subItem)) || false;
 
+  useEffect(() => {
+    const nextExpanded: Record<string, boolean> = {};
+
+    const collectExpanded = (item: NavItem) => {
+      if (item.subItems && isItemActive(item)) {
+        nextExpanded[item.href] = true;
+      }
+
+      item.subItems?.forEach(collectExpanded);
+    };
+
+    items.forEach(collectExpanded);
+    setExpandedItems((current) => ({ ...nextExpanded, ...current }));
+  }, [pathname, isAdmin]);
+
+  const toggleExpanded = (href: string) => {
+    setExpandedItems((current) => ({
+      ...current,
+      [href]: !current[href],
+    }));
+  };
+
   const renderItem = (item: NavItem, depth = 0) => {
     const isActive = pathname === item.href;
     const hasActiveSub = item.subItems?.some((subItem) => isItemActive(subItem)) || false;
-    const showSubs = Boolean(item.subItems && (isActive || hasActiveSub));
+    const showSubs = Boolean(item.subItems && expandedItems[item.href]);
     const itemClasses =
       depth === 0
         ? isActive || hasActiveSub
@@ -95,17 +119,32 @@ export default function SidebarNav({ isAdmin = false }: { isAdmin?: boolean }) {
 
     return (
       <div key={`${depth}-${item.href}`}>
-        <Link
-          href={item.href}
-          className={`flex items-center justify-between rounded-md px-3 py-2 transition ${childItemClasses}`}
-        >
-          <span>{item.label}</span>
+        <div className="flex items-center gap-1">
+          <Link
+            href={item.href}
+            className={`min-w-0 flex-1 rounded-md px-3 py-2 transition ${childItemClasses}`}
+          >
+            <span className="block truncate">{item.label}</span>
+          </Link>
+
           {item.subItems && (
-            <ChevronDown
-              className={`h-3.5 w-3.5 transition-transform ${showSubs ? "rotate-0" : "-rotate-90"}`}
-            />
+            <button
+              type="button"
+              onClick={() => toggleExpanded(item.href)}
+              aria-label={showSubs ? `Sbalit ${item.label}` : `Rozbalit ${item.label}`}
+              aria-expanded={showSubs}
+              className={`shrink-0 rounded-md p-2 transition ${
+                depth === 0
+                  ? "text-slate-300 hover:bg-slate-800 hover:text-white"
+                  : "text-slate-500 hover:bg-slate-800/50 hover:text-slate-200"
+              }`}
+            >
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform ${showSubs ? "rotate-0" : "-rotate-90"}`}
+              />
+            </button>
           )}
-        </Link>
+        </div>
 
         {showSubs && item.subItems && (
           <div className={childWrapperClasses}>

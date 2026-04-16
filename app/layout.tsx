@@ -19,13 +19,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="cs">
       <body className="font-sans">
         <div className="min-h-screen bg-paper text-ink">
-          <aside className="fixed inset-y-0 left-0 w-64 border-r border-slate-800 bg-slate-950 px-6 py-8 text-slate-100">
-            <div className="mb-10">
+          <aside className="fixed inset-y-0 left-0 flex w-64 flex-col border-r border-slate-800 bg-slate-950 px-6 py-8 text-slate-100">
+            <div className="mb-10 shrink-0">
               <p className="text-xs uppercase tracking-[0.3em] text-slate-400">Platforma</p>
               <p className="mt-2 text-lg font-semibold tracking-wide">Studijni Portal</p>
             </div>
-            <SidebarNav isAdmin={isAdmin} />
-            <div className="mt-auto pt-10">
+            <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+              <SidebarNav isAdmin={isAdmin} />
+            </div>
+            <div className="mt-6 shrink-0 pt-6">
               {user ? (
                 <div className="border-t border-slate-800 pt-4">
                   <p className="text-xs text-slate-400 truncate px-3">Přihlášen jako:</p>
