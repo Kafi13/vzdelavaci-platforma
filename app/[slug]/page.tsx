@@ -16,6 +16,8 @@ type LessonPage = {
 };
 
 const nextSection: Record<string, { href: string; label: string }> = {
+  'gen-ai-1': { href: '/gen-ai-2', label: '2. AI Act' },
+  'gen-ai-2': { href: '/gen-ai', label: 'Zpět na Gen AI sekci' },
   'quantum-1': { href: '/quantum-2', label: '2. Kvantové materiály' },
   'quantum-2': { href: '/quantum-3', label: '3. Kvantová senzorika a metrologie' },
   'quantum-3': { href: '/quantum-4', label: '4. Komunikace a bezpečnost' },

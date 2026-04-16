@@ -13,7 +13,20 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: "/uvod", label: "Uvod" },
-  { href: "/gen-ai", label: "Gen AI" },
+  {
+    href: "/gen-ai",
+    label: "Gen AI",
+    subItems: [
+      {
+        href: "/gen-ai",
+        label: "Vzdělávací sekce",
+        subItems: [
+          { href: "/gen-ai-1", label: "1. Jak správně promptovat" },
+          { href: "/gen-ai-2", label: "2. AI Act" },
+        ],
+      },
+    ],
+  },
   {
     href: "/ml",
     label: "ML",
