@@ -96,11 +96,10 @@ export default function DomainMap() {
             </div>
             <div className="space-y-4">
               <h2 className="max-w-3xl text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
-                Tohle má být navigace pro studenta, ne technický diagram.
+                Přehled studia na jednom místě.
               </h2>
               <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Začněte přehledem kvantové sekce, projděte šest kapitol ve správném pořadí,
-                potom si znalosti upevněte v procvičování a nakonec běžte na závěrečnou zkoušku.
+                Nejprve kapitoly, potom procvičování a nakonec zkouška.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

@@ -12,8 +12,7 @@ export default function HomePage() {
             Interaktivní mapa předmětu
           </h1>
           <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            Přehled celé studijní trasy pro kvantovou část platformy. Student tu má hned vidět,
-            kde začít, jak pokračovat a co následuje po naučení látky.
+            Jasný přehled studijní cesty od kapitol po zkoušku.
           </p>
         </div>
         <DomainMap />
