@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const chapterCards = [
   {
@@ -118,17 +118,6 @@ export default function MlEducationPage() {
             </div>
           </Link>
         ))}
-      </section>
-
-      <section className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <div className="flex items-center gap-3 text-slate-700">
-          <BookOpen className="h-5 w-5" />
-          <p className="font-bold">Zdrojové materiály</p>
-        </div>
-        <p className="mt-3 text-sm leading-7 text-slate-600">
-          Obsah těchto stránek je synchronizovaný přímo z PDF přednášek ve složce `ML`,
-          takže je možné ho dál upravovat nebo znovu přenahrát bez ručního kopírování.
-        </p>
       </section>
     </div>
   );
