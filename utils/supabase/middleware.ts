@@ -37,7 +37,11 @@ export async function updateSession(request: NextRequest) {
   const isAdminRoute = path.startsWith('/admin');
   
   // Protect all routes except auth-related pages or static assets
-  const isAuthPage = path.startsWith('/login') || path.startsWith('/auth');
+  const isAuthPage =
+    path.startsWith('/login') ||
+    path.startsWith('/auth') ||
+    path.startsWith('/forgot-password') ||
+    path.startsWith('/update-password');
 
   if (
     !user &&

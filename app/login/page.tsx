@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/utils/supabase/client';
 import Link from 'next/link';
 
@@ -14,7 +14,21 @@ export default function LoginPage() {
     const [message, setMessage] = useState<string | null>(null);
 
     const router = useRouter();
+    const searchParams = useSearchParams();
     const supabase = createClient();
+
+    useEffect(() => {
+        const confirmed = searchParams.get('confirmed');
+        const errorDescription = searchParams.get('error_description');
+
+        if (confirmed === '1') {
+            setMessage('E-mail byl úspěšně potvrzen. Teď se můžete přihlásit.');
+            setError(null);
+        } else if (errorDescription) {
+            setError(decodeURIComponent(errorDescription));
+            setMessage(null);
+        }
+    }, [searchParams]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -41,7 +55,7 @@ export default function LoginPage() {
                     }
                 });
                 if (error) throw error;
-                setMessage('Registrace proběhla úspěšně! Pokud je nastaveno potvrzování e-mailů, zkontrolujte svou schránku. Jinak se můžete přihlásit.');
+                setMessage('Registrace proběhla úspěšně. Pro dokončení klikněte na potvrzovací odkaz, který byl zaslán na váš e-mail.');
             }
         } catch (err: any) {
             // Translate common Supabase Auth errors to Czech
@@ -122,9 +136,13 @@ export default function LoginPage() {
                             </div>
                             {isLogin && (
                                 <div className="mt-2 text-right">
-                                    <Link href="/forgot-password" className="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+                                    <button
+                                        type="button"
+                                        onClick={() => router.push('/forgot-password')}
+                                        className="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors"
+                                    >
                                         Zapomněli jste heslo?
-                                    </Link>
+                                    </button>
                                 </div>
                             )}
                         </div>
