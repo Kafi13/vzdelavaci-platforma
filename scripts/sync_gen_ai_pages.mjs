@@ -14,11 +14,7 @@ const pages = [
   {
     slug: 'gen-ai',
     title: 'Generativní AI',
-    content: `
-**Co tato sekce řeší**
-
-Tato část se soustředí jen na dvě praktické oblasti. První je správné zadávání promptů, tedy jak s modelem komunikovat tak, aby vracel přesné a použitelné výstupy. Druhá je AI Act, tedy základní orientace v evropské regulaci umělé inteligence.
-`.trim(),
+    content: '',
   },
   {
     slug: 'gen-ai-1',
@@ -30,15 +26,27 @@ Model nečte záměr mezi řádky. Odpovídá na to, co opravdu dostane. Kvalita
 
 **Co má dobrý prompt obsahovat**
 
-Nejdůležitější je jasně říct, co má být výstupem, pro koho je určený a v jaké podobě ho chcete dostat. Pomáhá určit roli modelu, kontext úlohy, omezení a kritéria kvality.
+Nejdůležitější je jasně říct, co má být výstupem, pro koho je určený a v jaké podobě ho chcete dostat. Pomáhá určit úkol, kontext, omezení, cílový formát a kritéria kvality.
 
 **Buďte konkrétní**
 
 Vágní zadání vede k vágní odpovědi. Pokud chcete shrnutí, uveďte délku. Pokud chcete tabulku, napište to. Pokud má model hodnotit varianty, definujte podle čeho.
 
+**Oddělujte instrukce od vstupu**
+
+U delších zadání pomáhá vizuálně oddělit instrukci od dat, například pomocí nadpisů, odrážek nebo bloků textu. Model pak lépe rozpozná, co je zadání a co je materiál ke zpracování.
+
+**Ukažte požadovaný formát**
+
+Když je výstup důležitý pro další práci, má smysl přímo ukázat cílovou strukturu. Například seznam polí, osnovu nebo vzor odpovědi. Tím se výrazně snižuje nejednoznačnost.
+
 **Rozdělení složité úlohy**
 
 U náročnějších zadání bývá lepší rozdělit problém na menší kroky. Model pak méně tápe a snáz drží logiku postupu.
+
+**Začínejte jednoduše**
+
+Prakticky se vyplatí postupovat od jednoduchého zadání ke složitějšímu. Nejdřív zkusit přímý prompt, pak doplnit příklady a teprve poté přidávat další pravidla nebo více kroků.
 
 **Iterace místo jednorázového dotazu**
 
@@ -67,19 +75,23 @@ Základní logika regulace stojí na tom, že ne všechny AI systémy jsou stejn
 
 **Zakázané a vysoce rizikové použití**
 
-Některé praktiky jsou zakázané úplně. Jiná použití spadají do kategorie vysokého rizika a vyžadují přísnější dokumentaci, dohled, správu dat a kontrolu souladu.
+Některé praktiky jsou zakázané úplně, například určité manipulativní nebo nepřiměřeně invazivní způsoby použití AI. Jiná použití spadají do kategorie vysokého rizika a vyžadují přísnější dokumentaci, dohled, správu dat a kontrolu souladu.
 
-**Generativní modely a povinnosti**
+**Generativní modely a GPAI**
 
-U generativní AI se řeší hlavně transparentnost, způsob označení výstupů, práce s obsahem a povinnosti poskytovatelů modelů nebo systémů, které na nich stojí.
+AI Act řeší i obecné modely použitelné pro mnoho různých úloh. U těchto GPAI modelů se řeší hlavně technická dokumentace, politika k autorským právům a zveřejnění shrnutí tréninkového obsahu. U modelů se systémovým rizikem přibývá i řízení rizik, hlášení incidentů a bezpečnostní opatření.
+
+**Kdy pravidla dopadají**
+
+Pravidla se neuplatnila všechna najednou. Zákazy a část základních ustanovení se začaly používat od 2. února 2025. Povinnosti pro GPAI modely od 2. srpna 2025. Plná obecná použitelnost aktu má nastat od 2. srpna 2026, přičemž některé části mají vlastní harmonogram.
 
 **Proč je to důležité i pro uživatele**
 
-AI Act není jen téma pro právníky. Dopadá i na školy, firmy a instituce, které AI nástroje používají nebo nasazují do vlastních procesů.
+AI Act není jen téma pro právníky. Dopadá i na školy, firmy a instituce, které AI nástroje používají nebo nasazují do vlastních procesů. Rozdíl je mezi běžným použitím nástroje a vytvořením systému, který sám vstupuje do rozhodování o lidech, bezpečnosti nebo regulovaných službách.
 
 **Co si z kapitoly odnést**
 
-AI Act je důležitý proto, že zavádí pravidla podle dopadu a rizika. Kdo AI používá vážně, musí rozumět nejen technice, ale i regulačnímu rámci.
+AI Act je důležitý proto, že zavádí pravidla podle dopadu a rizika. Kdo AI používá vážně, musí rozumět nejen technice, ale i tomu, jaké právní a provozní požadavky se na dané použití vztahují.
 `.trim(),
   },
 ];

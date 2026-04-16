@@ -1,8 +1,9 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getSupabaseClient } from '@/utils/supabase';
+import { isAdminEmail } from '@/utils/admin';
 
 type EditableContentProps = {
   slug: string;
@@ -62,11 +63,26 @@ export default function EditableContent({ slug, initialContent }: EditableConten
   const [draft, setDraft] = useState(initialContent);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [canEdit, setCanEdit] = useState(false);
   const router = useRouter();
 
   const paragraphs = useMemo(() => splitParagraphs(content), [content]);
 
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+
+    supabase.auth.getUser().then(({ data, error: authError }) => {
+      if (authError) {
+        return;
+      }
+
+      setCanEdit(isAdminEmail(data.user?.email));
+    });
+  }, []);
+
   const handleSave = async () => {
+    if (!canEdit) return;
+
     setSaving(true);
     setError(null);
     const supabase = getSupabaseClient();
@@ -89,6 +105,8 @@ export default function EditableContent({ slug, initialContent }: EditableConten
   };
 
   const handleToggle = () => {
+    if (!canEdit) return;
+
     if (!isEditing) {
       setDraft(content);
     }
@@ -148,16 +166,18 @@ export default function EditableContent({ slug, initialContent }: EditableConten
         </div>
       )}
 
-      <div className="border-t border-slate-200 pt-4">
-        <button
-          type="button"
-          onClick={handleToggle}
-          className="text-sm font-medium text-slate-600 transition hover:text-slate-900"
-        >
-          {isEditing ? 'Close Edit Mode' : 'Edit Content'}
-        </button>
-        {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-      </div>
+      {canEdit && (
+        <div className="border-t border-slate-200 pt-4">
+          <button
+            type="button"
+            onClick={handleToggle}
+            className="text-sm font-medium text-slate-600 transition hover:text-slate-900"
+          >
+            {isEditing ? 'Close Edit Mode' : 'Edit Content'}
+          </button>
+          {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+        </div>
+      )}
     </section>
   );
 }
