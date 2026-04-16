@@ -23,6 +23,19 @@ const nextSection: Record<string, { href: string; label: string }> = {
   'quantum-5': { href: '/quantum-6', label: '6. Kvantové a hybridní algoritmy' },
   'quantum-6': { href: '/quantum-7', label: '7. Strojové učení (QML)' },
   'quantum-7': { href: '/quantum-practice', label: 'Procvičování všech otázek' },
+  'ml-1': { href: '/ml-2', label: '2. Data a featurizace' },
+  'ml-2': { href: '/ml-3', label: '3. Příprava dat pro AI v materiálech' },
+  'ml-3': { href: '/ml-4', label: '4. Trénink a validace modelů' },
+  'ml-4': { href: '/ml-5', label: '5. Základní modely a explorace dat' },
+  'ml-5': { href: '/ml-6', label: '6. Ansámblové metody a XAI' },
+  'ml-6': { href: '/ml-7', label: '7. Pokročilé techniky a nasazení klasického ML' },
+  'ml-7': { href: '/ml-8', label: '8. Úvod do neuronových sítí a hlubokého učení' },
+  'ml-8': { href: '/ml-9', label: '9. Konvoluční sítě a augmentace dat' },
+  'ml-9': { href: '/ml-10', label: '10. GNN pro materiálové simulace a MLIPs' },
+  'ml-10': { href: '/ml-11', label: '11. Sekvenční data, RNN a Transformery' },
+  'ml-11': { href: '/ml-12', label: '12. PINNs a kvantifikace nejistoty' },
+  'ml-12': { href: '/ml-13', label: '13. Inverzní návrh a generativní AI' },
+  'ml-13': { href: '/ml', label: 'Zpět na ML sekci' },
 };
 
 export default async function Page({ params }: PageProps) {

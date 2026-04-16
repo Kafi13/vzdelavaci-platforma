@@ -13,7 +13,31 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: "/uvod", label: "Uvod" },
   { href: "/gen-ai", label: "Gen AI" },
-  { href: "/ml", label: "ML" },
+  {
+    href: "/ml",
+    label: "ML",
+    subItems: [
+      {
+        href: "/ml",
+        label: "Vzdělávací sekce",
+        subItems: [
+          { href: "/ml-1", label: "1. AI revoluce v materiálovém inženýrství" },
+          { href: "/ml-2", label: "2. Data a featurizace" },
+          { href: "/ml-3", label: "3. Příprava dat pro AI v materiálech" },
+          { href: "/ml-4", label: "4. Trénink a validace modelů" },
+          { href: "/ml-5", label: "5. Základní modely a explorace dat" },
+          { href: "/ml-6", label: "6. Ansámblové metody a XAI" },
+          { href: "/ml-7", label: "7. Pokročilé techniky a nasazení klasického ML" },
+          { href: "/ml-8", label: "8. Úvod do neuronových sítí a hlubokého učení" },
+          { href: "/ml-9", label: "9. Konvoluční sítě a augmentace dat" },
+          { href: "/ml-10", label: "10. GNN pro materiálové simulace a MLIPs" },
+          { href: "/ml-11", label: "11. Sekvenční data, RNN a Transformery" },
+          { href: "/ml-12", label: "12. PINNs a kvantifikace nejistoty" },
+          { href: "/ml-13", label: "13. Inverzní návrh a generativní AI" },
+        ],
+      },
+    ],
+  },
   {
     href: "/quantum",
     label: "Quantum",
