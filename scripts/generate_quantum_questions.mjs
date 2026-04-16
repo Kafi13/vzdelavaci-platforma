@@ -15,8 +15,8 @@ const chapters = [
   "Kvantová komunikace a bezpečnost_ Nové základy.md",
   "Kvantová senzorika_ Principy a Aplikace.md",
   "Kvantové materiály_ Základ kvantových technologií.md",
-  "Kvantové strojové učení_ Budoucnost AI.md",
-  "Kvantové a hybridní algoritmy_ Kapitola 7.md"
+  "Kvantové a hybridní algoritmy_ Kapitola 7.md",
+  "Kvantové strojové učení_ Budoucnost AI.md"
 ];
 
 async function generateQuestionsForChapter(chapterFile) {

@@ -10,9 +10,23 @@ const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+const chapterOrder = [
+    'Úvod do kvantových technologií_ Skripta.md',
+    'Kvantové materiály_ Základ kvantových technologií.md',
+    'Kvantová senzorika_ Principy a Aplikace.md',
+    'Kvantová komunikace a bezpečnost_ Nové základy.md',
+    'Kvantové Počítače_ Principy, Aplikace, Limity.md',
+    'Kvantové a hybridní algoritmy_ Kapitola 7.md',
+    'Kvantové strojové učení_ Budoucnost AI.md',
+];
+
 async function main() {
     const rawData = fs.readFileSync('quantum_exam_questions.json', 'utf8');
-    const questions = JSON.parse(rawData);
+    const questions = JSON.parse(rawData).sort((a, b) => {
+        const aIndex = chapterOrder.indexOf(a.chapter_id);
+        const bIndex = chapterOrder.indexOf(b.chapter_id);
+        return aIndex - bIndex;
+    });
 
     console.log(`Importuji ${questions.length} otázek do knowledge_cards...`);
 

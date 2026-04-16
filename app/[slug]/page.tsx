@@ -20,8 +20,8 @@ const nextSection: Record<string, { href: string; label: string }> = {
   'quantum-2': { href: '/quantum-3', label: '3. Kvantová senzorika a metrologie' },
   'quantum-3': { href: '/quantum-4', label: '4. Komunikace a bezpečnost' },
   'quantum-4': { href: '/quantum-5', label: '5. Kvantové výpočty a simulace' },
-  'quantum-5': { href: '/quantum-6', label: '6. Strojové učení (QML)' },
-  'quantum-6': { href: '/quantum-7', label: '7. Kvantové a hybridní algoritmy' },
+  'quantum-5': { href: '/quantum-6', label: '6. Kvantové a hybridní algoritmy' },
+  'quantum-6': { href: '/quantum-7', label: '7. Strojové učení (QML)' },
   'quantum-7': { href: '/quantum-practice', label: 'Procvičování všech otázek' },
 };
 

@@ -222,48 +222,7 @@ Kvantové výpočty nejsou univerzální náhradou klasických počítačů. Jej
   },
   {
     slug: 'quantum-6',
-    title: '6. Kvantové strojové učení (QML)',
-    content: `
-**Proč se spojuje kvantová fyzika a AI**
-
-Strojové učení pracuje s velkými daty, vysokou dimenzionalitou a složitými vztahy mezi proměnnými. Kvantové systémy jsou přirozeně schopné pracovat ve velmi bohatých stavových prostorech. Proto se nabízí otázka, jestli by kvantové výpočty mohly některé úlohy strojového učení urychlit nebo zpřesnit.
-
-**Co je QML**
-
-Quantum Machine Learning je obor na pomezí kvantových výpočtů a umělé inteligence. Typicky jde o hybridní přístup: část úlohy běží klasicky a část se řeší pomocí kvantového obvodu nebo kvantového modelu.
-
-Není to tedy „AI běžící celá na kvantovém počítači“, ale spíš chytré propojení obou světů.
-
-**Kde je hlavní příslib**
-
-Teoretická výhoda se objevuje hlavně tam, kde pracujeme s velmi složitými strukturami dat, komplikovanými optimalizačními úlohami nebo s reprezentacemi, které se klasicky škálují špatně. Kvantový systém může některé takové prostory reprezentovat přirozeněji.
-
-**Největší problém: načtení dat**
-
-Velké omezení dnešního QML je v tom, že data vznikají klasicky, ale kvantový počítač je potřebuje zakódovat do kvantového stavu. Tento krok bývá náročný a může smazat část teoretické výhody.
-
-Jinými slovy: nestačí mít rychlý kvantový model. Musíme ještě efektivně dostat data dovnitř.
-
-**Hybridní modely**
-
-Proto dnes dávají největší smysl hybridní architektury. Klasický počítač zpracuje to, co dělá dobře, a kvantová část řeší úzký výpočetní krok, kde může být přínosná. To je mnohem realističtější než představa čistě kvantové AI.
-
-**Kde může mít QML smysl**
-
-Mluví se o aplikacích v chemii, farmacii, materiálovém výzkumu, optimalizaci, finančních modelech nebo vybraných klasifikačních úlohách. Důležité ale je nepodlehnout hype. V mnoha úlohách dnes klasické modely stále dominují.
-
-**Jak se na QML dívat střízlivě**
-
-QML je slibný směr, ale je potřeba ho hodnotit realisticky. Ne každá úloha z AI se zlepší jen tím, že ji přesuneme na kvantový hardware. Přínos bude pravděpodobně selektivní a bude záviset na konkrétním problému i kvalitě budoucího hardwaru.
-
-**Co si z kapitoly odnést**
-
-Kvantové strojové učení je zajímavé hlavně jako hybridní disciplína. Má potenciál pomoci u vybraných složitých úloh, ale jeho skutečná hodnota bude záviset na tom, zda se podaří překonat omezení dnešního hardwaru a efektivně pracovat s daty.
-`.trim(),
-  },
-  {
-    slug: 'quantum-7',
-    title: '7. Kvantové a hybridní algoritmy',
+    title: '6. Kvantové a hybridní algoritmy',
     content: `
 **Proč nestačí říct, že kvantový počítač je jen „rychlejší klasický“**
 
@@ -316,6 +275,47 @@ To je důležité i prakticky: většina vývoje dnes probíhá v hybridním wor
 **Co si z kapitoly odnést**
 
 Kapitola ukazuje, že skutečná síla kvantových algoritmů neleží v jednoduché představě „všechno najednou“, ale v přesném řízení interference. Zároveň vysvětluje, proč dnešní praxe stojí hlavně na hybridních algoritmech jako VQE a QAOA, které propojují kvantový procesor s klasickou optimalizací a dávají smysl už na současném hardwaru.
+`.trim(),
+  },
+  {
+    slug: 'quantum-7',
+    title: '7. Kvantové strojové učení (QML)',
+    content: `
+**Proč se spojuje kvantová fyzika a AI**
+
+Strojové učení pracuje s velkými daty, vysokou dimenzionalitou a složitými vztahy mezi proměnnými. Kvantové systémy jsou přirozeně schopné pracovat ve velmi bohatých stavových prostorech. Proto se nabízí otázka, jestli by kvantové výpočty mohly některé úlohy strojového učení urychlit nebo zpřesnit.
+
+**Co je QML**
+
+Quantum Machine Learning je obor na pomezí kvantových výpočtů a umělé inteligence. Typicky jde o hybridní přístup: část úlohy běží klasicky a část se řeší pomocí kvantového obvodu nebo kvantového modelu.
+
+Není to tedy „AI běžící celá na kvantovém počítači“, ale spíš chytré propojení obou světů.
+
+**Kde je hlavní příslib**
+
+Teoretická výhoda se objevuje hlavně tam, kde pracujeme s velmi složitými strukturami dat, komplikovanými optimalizačními úlohami nebo s reprezentacemi, které se klasicky škálují špatně. Kvantový systém může některé takové prostory reprezentovat přirozeněji.
+
+**Největší problém: načtení dat**
+
+Velké omezení dnešního QML je v tom, že data vznikají klasicky, ale kvantový počítač je potřebuje zakódovat do kvantového stavu. Tento krok bývá náročný a může smazat část teoretické výhody.
+
+Jinými slovy: nestačí mít rychlý kvantový model. Musíme ještě efektivně dostat data dovnitř.
+
+**Hybridní modely**
+
+Proto dnes dávají největší smysl hybridní architektury. Klasický počítač zpracuje to, co dělá dobře, a kvantová část řeší úzký výpočetní krok, kde může být přínosná. To je mnohem realističtější než představa čistě kvantové AI.
+
+**Kde může mít QML smysl**
+
+Mluví se o aplikacích v chemii, farmacii, materiálovém výzkumu, optimalizaci, finančních modelech nebo vybraných klasifikačních úlohách. Důležité ale je nepodlehnout hype. V mnoha úlohách dnes klasické modely stále dominují.
+
+**Jak se na QML dívat střízlivě**
+
+QML je slibný směr, ale je potřeba ho hodnotit realisticky. Ne každá úloha z AI se zlepší jen tím, že ji přesuneme na kvantový hardware. Přínos bude pravděpodobně selektivní a bude záviset na konkrétním problému i kvalitě budoucího hardwaru.
+
+**Co si z kapitoly odnést**
+
+Kvantové strojové učení je zajímavé hlavně jako hybridní disciplína. Má potenciál pomoci u vybraných složitých úloh, ale jeho skutečná hodnota bude záviset na tom, zda se podaří překonat omezení dnešního hardwaru a efektivně pracovat s daty.
 `.trim(),
   },
 ];

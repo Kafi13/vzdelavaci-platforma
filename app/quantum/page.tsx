@@ -35,14 +35,14 @@ const chapterCards = [
   {
     href: "/quantum-6",
     kicker: "Kapitola 6",
-    title: "Strojové učení (QML)",
-    text: "Hybridní algoritmy, kvantové feature spaces a realistické hodnocení přínosů pro AI.",
+    title: "Kvantové a hybridní algoritmy",
+    text: "Interference, orákula, VQE, QAOA a praktická logika dnešních hybridních kvantových workflow.",
   },
   {
     href: "/quantum-7",
     kicker: "Kapitola 7",
-    title: "Kvantové a hybridní algoritmy",
-    text: "Interference, orákula, VQE, QAOA a praktická logika dnešních hybridních kvantových workflow.",
+    title: "Strojové učení (QML)",
+    text: "Hybridní algoritmy, kvantové feature spaces a realistické hodnocení přínosů pro AI.",
   },
 ];
 
