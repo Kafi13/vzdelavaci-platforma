@@ -42,6 +42,17 @@ async function main() {
         correct_answer: q.options[q.correct_option_index]
     }));
 
+    // Smažeme staré kapitolové checkpointy, aby v systému zůstal jen jeden společný pool otázek.
+    const { error: deleteChapterError } = await supabase
+        .from('knowledge_cards')
+        .delete()
+        .like('page_slug', 'quantum-%')
+        .not('checkpoint_question', 'is', null);
+
+    if (deleteChapterError) {
+        console.error('Chyba při mazání kapitolových otázek:', deleteChapterError);
+    }
+
     // Smažeme staré zkouškové otázky, pokud existují
     const { error: deleteError } = await supabase
         .from('knowledge_cards')

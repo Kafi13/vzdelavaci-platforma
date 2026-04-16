@@ -26,7 +26,7 @@ export default function ExamPage() {
     const { data, error } = await supabase
       .from("knowledge_cards")
       .select("*")
-      .like("page_slug", "quantum%")
+      .eq("page_slug", "quantum_exam")
       .not("checkpoint_question", "is", null);
 
     if (data && data.length > 0) {

@@ -67,10 +67,10 @@ export default function QuantumPracticePage() {
     ] = await Promise.all([
       supabase.auth.getUser(),
       supabase
-      .from("knowledge_cards")
-      .select("*")
-      .like("page_slug", "quantum%")
-      .not("checkpoint_question", "is", null),
+        .from("knowledge_cards")
+        .select("*")
+        .eq("page_slug", "quantum_exam")
+        .not("checkpoint_question", "is", null),
     ]);
 
     const authUser = authData.user;
