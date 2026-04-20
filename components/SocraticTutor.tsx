@@ -65,7 +65,7 @@ export default function SocraticTutor() {
         <div className="fixed bottom-4 right-4 z-50 font-sans">
             {/* Chat Window */}
             {isOpen && (
-                <div className="mb-4 w-80 sm:w-96 h-[500px] bg-white border border-gray-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
+                <div className="mb-4 w-[calc(100vw-2rem)] sm:w-96 h-[500px] max-h-[70vh] bg-white border border-gray-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-5">
                     {/* Header */}
                     <div className="bg-indigo-600 text-white p-4 flex justify-between items-center rounded-t-2xl">
                         <h3 className="font-bold text-lg flex items-center gap-2">

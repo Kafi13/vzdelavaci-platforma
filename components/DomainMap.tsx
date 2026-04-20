@@ -57,7 +57,7 @@ export default function DomainMap() {
         })}
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-2">
+      <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
           <p className="mb-4 text-sm font-semibold text-slate-500">Kvantové technologie</p>
           <div className="grid gap-3">

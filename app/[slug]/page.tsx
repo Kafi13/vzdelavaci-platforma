@@ -75,7 +75,7 @@ export default async function Page({ params }: PageProps) {
           <p className="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">Další sekce</p>
           <Link
             href={next.href}
-            className="inline-flex items-center gap-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3.5 rounded-xl transition-colors group"
+            className="flex sm:inline-flex items-center justify-between sm:justify-start gap-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3.5 rounded-xl transition-colors group"
           >
             <span>{next.label}</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

@@ -131,9 +131,9 @@ export default function ExamPage() {
             Správně jste odpověděli na <span className="font-bold text-slate-900">{correctCount}</span> z <span className="font-bold text-slate-900">{questions.length}</span> otázek.
           </p>
         </div>
-        <div className="flex gap-4 justify-center">
-          <button onClick={handleStart} className="flex items-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold"><RefreshCw size={18}/>Zkusit znovu</button>
-          <Link href="/dashboard" className="flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-xl font-bold">Zpět na profil</Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onClick={handleStart} className="flex items-center justify-center gap-2 bg-slate-900 text-white px-6 py-3 rounded-xl font-bold"><RefreshCw size={18}/>Zkusit znovu</button>
+          <Link href="/dashboard" className="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-xl font-bold">Zpět na profil</Link>
         </div>
       </div>
     );
